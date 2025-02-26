@@ -304,6 +304,11 @@
   background-color: #fff;
 }
 
+.navbar-nav {
+  margin-left: auto;
+}
+
+
 .webmap-title {
   font-weight: bold;
   color: #2980B9;
