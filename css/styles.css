@@ -73,10 +73,13 @@
 
 .technology-box {
   display: inline-block;
-  padding: 5px 10px;
-  margin-right: 10px;
-  border-radius: 4px;
-  background-color: #f2f2f2; /* Set your desired color for the technology box */
+  padding: 10px 20px; /* Increased padding for more internal space */
+  margin: 10px 5px; /* Increased margin to add space between the boxes */
+  border-radius: 4px; /* Keeping your existing border radius */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: Adds subtle depth */
+  font-size: 16px; /* Ensuring text is easily readable */
+  background-color: #f2f2f2; /* Default light gray background */
+  text-align: center; /* Ensures text within the box is centered */
 }
 
 .php {
@@ -101,7 +104,7 @@
 }
 
 .postgresql {
-  background-color:#FCF3CF;
+  background-color:#faefbf;
 }
 
 .mysql {
