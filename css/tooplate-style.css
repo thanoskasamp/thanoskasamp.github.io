@@ -33,13 +33,6 @@ body::before {
   z-index: -1; /* Keeps it behind content */
 }
 
-/* Adjustments for mobile devices */
-@media (max-width: 768px) {
-  body {
-    background-attachment: scroll; /* Changes the background-attachment to scroll on mobile devices */
-  }
-}
-
 .full-screen {
   padding: 8rem 0;
 }
