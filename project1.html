@@ -47,7 +47,7 @@
       <div class="shadow p-4 mx-auto" style="max-width: 900px; background-color: #fff; border-radius: 0.5rem;">
 
         <!-- PAGE TITLE -->
-        <h1 class="project-title mb-1">Smart Water Management Tools</h1>
+        <h1 class="project-title mb-1">Puplic Transport Accessibility Analysis</h1>
         <!-- Optional short descriptor -->
         <!-- <p style="color: #6c757d;">An advanced DMA management application</p> -->
         
@@ -73,10 +73,9 @@
           <div class="col-md-6">
             <h5 class="mb-2"><i class="uil uil-list-ui-alt"></i> Skills / Technologies</h5>
             <!-- Using your .technology-box classes for each tool/skill -->
-            <span class="technology-box php">PHP</span>
-            <span class="technology-box javascript">JavaScript</span>
-            <span class="technology-box sql">SQL</span>
-            <span class="technology-box postgis">PostGIS</span>
+            <span class="technology-box python">Python</span>
+            <span class="technology-box qgis">QGIS</span>
+            <span class="technology-box css">Jupyter Notebook</span>
           </div>
         </div>
 
@@ -86,10 +85,9 @@
         <div class="mb-4">
           <h4>Objective:</h4>
           <p>
-            Provide a short explanation of the main goal of this project. For example:
-            “SWMT aims to enable water authorities to efficiently manage District Metered
-            Areas, reduce Non-Revenue Water, and improve real-time decision-making using
-            advanced geospatial data and analytics.”
+            This project was designed to enhance the accessibility of public transportation in the neighborhoods of Toumpa and
+            Ano Poli in Thessaloniki. The focus was on using maps and data analysis to understand how easily people can walk to 
+            their nearest bus stops, aiming to help city planners make better decisions and improve public transit options.
           </p>
         </div>
 
@@ -100,16 +98,24 @@
           <h4>Methodology:</h4>
           <ol>
             <li>
-              <strong>Data Collection:</strong> Summarize how you gathered data 
-              (e.g., from sensors, shapefiles, APIs, etc.).
+              <strong>Data Collection:</strong> The data was collected from OpenStreetMap using the OSMnx tool,
+               which included information about buildings, streets, and bus stop locations.
             </li>
             <li>
-              <strong>Data Processing:</strong> Describe how you cleaned, converted,
-              or geoprocessed data (ArcPy, PostGIS, Python, etc.).
+              <strong>Data Processing:</strong> The data was cleaned and organized to ensure it was accurate and usable for analysis.
+               Scripts in Python were used to sort out necessary information and align all data to a common format for detailed examination.
             </li>
             <li>
-              <strong>Web Map Integration:</strong> Show how you integrated data 
-              into a web-based map (Leaflet, MapLibre, etc.).
+              <strong>Network Analysis:</strong> The project involved calculating the shortest walking routes to bus stops using network analysis methods.
+               Buildings were connected to the closest points on the walking network, allowing the calculation of the most efficient paths for pedestrians.
+            </li>
+            <li>
+                <strong>QGIS Application</strong> QGIS was employed to produce static maps that visually represent the data and analysis results, providing clear, 
+                geographic visualizations of walking routes and accessibility.
+            </li>
+            <li>
+                <strong>Interactive Mapping</strong> Interactive maps were created using the Folium library in Python, enabling dynamic visualization of the data 
+                that users can interact with to explore different aspects of public transportation accessibility.
             </li>
           </ol>
         </div>
@@ -120,8 +126,8 @@
         <div class="mb-4">
           <h4>Results:</h4>
           <ul>
-            <li>Reduction in NRW by 10%, improved water distribution efficiency, etc.</li>
-            <li>Any interesting outcomes or performance metrics from your approach.</li>
+            <li>The analysis provided a comparison of how accessible public transportation is in both neighborhoods.
+                 It showed differences in walking distances and times to bus stops, identifying areas where access could be improved.</li>
           </ul>
         </div>
 
@@ -131,8 +137,10 @@
         <div class="mb-4">
           <h4>Conclusions &amp; Future Directions:</h4>
           <p>
-            Summarize your overall findings, highlight lessons learned, 
-            or propose next steps (e.g., “Mobile app integration,” “API for external data sources,” etc.).
+            The findings demonstrate the usefulness of using map-based network analysis for city planning, 
+            particularly in enhancing public transport systems. Suggestions for future work include expanding
+            the analysis to more areas, incorporating live traffic updates to adjust walking times, and developing an app
+            that provides real-time transport accessibility information to residents.
           </p>
         </div>
 
@@ -143,6 +151,12 @@
           <img src="images/toumpa_accessibility.webp" alt="toumpa_accessibility" 
                class="img-fluid rounded shadow-sm" style="max-width: 100%; height: auto;">
         </div>
+
+        <div class="mb-4 text-center">
+            <img src="images/ano_poli_accessibility.webp" alt="toumpa_accessibility" 
+                 class="img-fluid rounded shadow-sm" style="max-width: 100%; height: auto;">
+          </div>
+
         <!--
         <div class="mb-4">
           <div class="iframe-container">
