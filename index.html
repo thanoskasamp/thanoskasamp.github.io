@@ -88,7 +88,13 @@
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
 
-    <!-- REFRESH PAGE SCRIPT -->
+
+    <!-- FOOTER YEAR SCRIPT -->
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- REFRESH PAGE SCRIPT-->
     <script>
         window.onload = function() {
           setTimeout(function() {
@@ -96,11 +102,6 @@
           }, 10); // Adjust the timeout as necessary
         }
       </script>
-
-    <!-- FOOTER YEAR SCRIPT -->
-    <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
 
   </body>
 </html>
