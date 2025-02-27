@@ -197,9 +197,11 @@ b, strong {
 .navbar {
   background: rgba(255, 255, 255, 0.8) !important; /* More transparent white background */
   border-bottom: 1px solid #f0f0f0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   padding-top: 0;
   padding-bottom: 0;
 }
+
 
 /* Keep the navbar fully visible when pinned */
 .navbar[class*="-unpinned"] {
