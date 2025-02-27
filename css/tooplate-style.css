@@ -194,8 +194,8 @@ b, strong {
   will-change: transform;
   transition: transform 200ms linear;
 }
-.navbar[class*="headroom--not-top"] {
-  background: rgba(255, 255, 255, 0.1) !important; /* More transparent white background */
+.navbar {
+  background: rgba(255, 255, 255, 0.8) !important; /* More transparent white background */
   border-bottom: 1px solid #f0f0f0;
   padding-top: 0;
   padding-bottom: 0;
