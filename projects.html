@@ -82,6 +82,19 @@
       </div>   
     </div>
 
+    <!-- SPACE -->
+    
+    <div class="container">
+        <div class="row">
+            <br><br>
+        </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>Athanasios Kasampalis • © <span id="currentYear"></span></p>
+    </footer>
+
+
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -91,6 +104,11 @@
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
     
+    <!-- FOOTER YEAR SCRIPT -->
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
     <!-- REFRESH PAGE SCRIPT -->
     <script>
         window.onload = function() {
