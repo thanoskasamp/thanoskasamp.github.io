@@ -8,93 +8,145 @@
 
     <title>Athanasios Kasampalis - Portfolio</title>
 
+    <!-- Keep your existing CSS links -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/unicons.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
-
-    <!-- MAIN STYLE -->
     <link rel="stylesheet" href="css/tooplate-style.css">
-    
-
   </head>
 
   <body>
 
-        <!-- MENU -->
-        <nav class="navbar navbar-expand-sm navbar-light">
-            <div class="container">
-                <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i>A. Kasampalis</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    <span class="navbar-toggler-icon"></span>
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="bio.html" class="nav-link"><span data-hover="Bio">Bio</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="projects.html" class="nav-link"><span data-hover="Projects">Projects</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-          </nav>
-
-    <!-- PROJECTS -->
-    <div class="container">
-
-        <div class="row">
-            <br><br>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-sm navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i>A. Kasampalis</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto"> 
+            <li class="nav-item">
+              <a href="bio.html" class="nav-link"><span data-hover="Bio">Bio</span></a>
+            </li>
+            <li class="nav-item active">
+              <a href="projects.html" class="nav-link"><span data-hover="Projects">Projects</span></a>
+            </li>
+          </ul>
         </div>
+      </div>
+    </nav>
 
+    <!-- SPACER (optional) -->
+    <div class="container my-5">
       <div class="row">
-        <div class="col-3 project-list">
-          
-              <h4>Projects</h4>
-              <ul>
-                  <li onclick="showProject('project1')">Smart Water Management Tools</li>
-                  <li onclick="showProject('project2')">Data Collection App</li>
-                  <li onclick="showProject('project3')">Drone Survey and WebGIS</li>
-                  <li onclick="showProject('project4')">Visualizing and Sharing 3D Web Maps</li>
-                  <li onclick="showProject('project13')">Automating Flood Vulnerability Analysis with ArcPy</li>
-                  <li onclick="showProject('project14')">Landfill Site Selection with ArcPy and GEE</li>
-                  <li onclick="showProject('project5')">ArcGIS JavaScript API</li>
-                  <li onclick="showProject('project6')">3D Mapping with Web AppBuilder</li>
-                  <li onclick="showProject('project10')">Interactive Mapping with Geopandas and Folium</li>
-                  <li onclick="showProject('project11')">Mapping with Plotly</li>
-                  <li onclick="showProject('project12')">Feature Manipulation Engine</li>
-                  <li onclick="showProject('project7')">Interactive WebMap of Palestine</li>
-                  <!-- Add more projects as needed -->
-              </ul>
-          
+        <div class="col text-center">
+          <h1 class="mb-4">Projects</h1>
         </div>
-        <div class="col-9 project-description">
-          
-              <h4 id="project-title">Project Title</h4>
-              <p id="project-details">Select a project to view its details.</p>
-          
+      </div>
+      
+      <!-- PROJECT CARD #1 -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <!-- The “shadow box” similar to your Bio page -->
+          <div class="shadow mx-auto p-4" style="max-width: 900px;">
+            <div class="row align-items-center">
+              <!-- Thumbnail Image -->
+              <div class="col-md-4 mb-3 mb-md-0">
+                <img src="images/procedures.jpg" alt="SWMT Project" class="img-fluid rounded">
+              </div>
+              <!-- Project Title / Description / Tags -->
+              <div class="col-md-8">
+                <h4 class="project-title">Smart Water Management Tools</h4>
+                <p class="project-text">
+                  SWMT is a web-GIS based software designed to revolutionize DMA management. 
+                  With its user-friendly interface and powerful features, SWMT offers a comprehensive 
+                  solution for efficient and sustainable water distribution.
+                </p>
+                <!-- Technologies (reuse your .technology-box styles) -->
+                <div class="mb-3">
+                  <span class="technology-box php">PHP</span>
+                  <span class="technology-box javascript">JavaScript</span>
+                  <span class="technology-box sql">SQL</span>
+                  <span class="technology-box postgis">PostGIS</span>
+                </div>
+                <!-- “More” Button -->
+                <a href="#" class="btn btn-outline-secondary">More</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>   
+      </div>
+
+      <!-- PROJECT CARD #2 -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="shadow mx-auto p-4" style="max-width: 900px;">
+            <div class="row align-items-center">
+              <div class="col-md-4 mb-3 mb-md-0">
+                <img src="images/mobile_app.jpg" alt="Data Collection App" class="img-fluid rounded">
+              </div>
+              <div class="col-md-8">
+                <h4 class="project-title">Data Collection App</h4>
+                <p class="project-text">
+                  A companion mobile application for SWMT used by field teams to collect 
+                  and sync water-meter data directly into a PostgreSQL server, ensuring 
+                  real-time updates for accurate network analysis.
+                </p>
+                <div class="mb-3">
+                  <span class="technology-box php">PHP</span>
+                  <span class="technology-box javascript">JavaScript</span>
+                  <span class="technology-box postgresql">PostgreSQL</span>
+                  <span class="technology-box leaflet">Leaflet</span>
+                </div>
+                <a href="#" class="btn btn-outline-secondary">More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT CARD #3 -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="shadow mx-auto p-4" style="max-width: 900px;">
+            <div class="row align-items-center">
+              <div class="col-md-4 mb-3 mb-md-0">
+                <img src="images/drone_workflow.jpg" alt="Drone Survey" class="img-fluid rounded">
+              </div>
+              <div class="col-md-8">
+                <h4 class="project-title">Drone Survey and WebGIS</h4>
+                <p class="project-text">
+                  High-resolution drone imagery integrated into web-based GIS applications. 
+                  Improves base-map accuracy and provides unparalleled detail for water utilities 
+                  and other geospatial analyses.
+                </p>
+                <div class="mb-3">
+                  <span class="technology-box sql">GDAL</span>
+                  <span class="technology-box gdal">Image Caching</span>
+                  <span class="technology-box javascript">Pix4D</span>
+                </div>
+                <a href="#" class="btn btn-outline-secondary">More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADD MORE PROJECT CARDS AS NEEDED... -->
     </div>
 
-    <!-- SPACE -->
-    
-    <div class="container">
-        <div class="row">
-            <br><br>
-        </div>
-
     <!-- FOOTER -->
-    <footer class="footer">
-        <p>Athanasios Kasampalis • © <span id="currentYear"></span></p>
+    <footer class="footer text-center py-3">
+      <p>Athanasios Kasampalis • © <span id="currentYear"></span></p>
     </footer>
 
-
+    <!-- JS SCRIPTS -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -103,502 +155,11 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
-    
-    <!-- FOOTER YEAR SCRIPT -->
+
     <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+      // Footer Year
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 
-    <!-- REFRESH PAGE SCRIPT -->
-    <script>
-        window.onload = function() {
-          setTimeout(function() {
-            window.scrollTo(0,0);
-          }, 10); // Adjust the timeout as necessary
-        }
-      </script>
-
   </body>
-
-<script>
-  // Function to display project details
-  function showProject(project) {
-
-    var projectTitle = '';
-    var projectDetails = '';
-
-    if (project == 'project1') {
-        projectTitle = `
-            <p class="text-center project-title">Smart Water Management Tools (SWMT)</p>
-        `;
-        projectDetails = `
-            <h5 class="activities-title">Overview</h5>
-            <p class="project-text">SWMT is a web-GIS based software designed to revolutionize DMA (District Metered Area) management. With its user-friendly interface and powerful features, SWMT offers a comprehensive solution for efficient and sustainable water distribution. It is the official DMA management software of Dhaka WASA, which is the largest water service provider in Southeast Asia.</p>
-            <h5 class="activities-title">Description</h5>
-            <p class="project-text">SDMT is a web-based software accessible from anywhere in the world via any internet browser, eliminating the need for installations or software downloads. Its intuitive design and robust functionality empower users to optimize DMA management from anywhere, anytime.</p>
-            <p class="project-text">Some of the key features are:</p>
-            <ul class="activities-list tick-list project-text">
-                <li>Users can gain access to comprehensive DMA information from multiple shapefiles, GeoJSON files, APIs, and databases. </li>
-                <li>SWMT enables the users to perform queries on the existing DMA assets (i.e., valves, pipelines, PTW, DMA chambers, service connections, transmission lines, injection points), modify their attributes, change their location, edit the geometry, delete assets, and add new DMA assets.</li>
-                <li>Through server interconnection and API, SWMT fetches billing data from the MIS server of Dhaka WASA and uses this information to calculate NRW and display the billing anomalies on web maps. Besides, it automatically displays the calculated NRW results on separate dashboards. </li>
-            </ul>
-            <div class="gallery">
-              <div class="project-image">
-                <img src="images/procedures.jpg" alt="Image 1">
-              </div>
-              <div class="project-image">
-                <img src="images/versions.jpg" alt="Image 2">
-              </div>
-            </div>
-            <ul class="activities-list tick-list project-text">
-                <li>SWMT has a secure login system. It has two versions, one version is accessible by the general users (we call it Readonly Version), another version is accessible by only authorized persons (Edit Version). In the Readonly Version, users can only view web maps and make queries. On the contrary, in the Edit Version, users can edit the data in real-time.</li>
-                <li>In SWMT, data can be dynamically updated in real-time. Therefore, it contains the up-to-date data of Dhaka WASA. These spatial data can be downloaded directly from SWMT both in GeoJSON format and Excel files. </li>
-            </ul>
-            <br>
-            <div class="iframe-container">
-                <iframe width="700" height="390" src="https://www.youtube.com/embed/jUI7oM5rBjU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <br>
-            <ul class="activities-list tick-list project-text">
-                <li>SWMT incorporates a powerful Content Management System (CMS) that empowers admins to create, manage, optimize the customer experience, and handle user management, groups, and tool integration.</li>
-                <li>Different open source data collection software, like- Kobo Toolbox, QField etc. can be used to directly feed data into SWMT. These data can be displayed in the web maps of SWMT in real-time.</li>
-                <li>It can be used by an unlimited number of users. </li>
-            </ul>
-            <br>
-            <h5 class="activities-title">Technologies</h5>
-            <div class="technologies">
-
-                <div class="technology-box php">
-                    <span>PHP</span>
-                </div>
-                <div class="technology-box javascript">
-                    <span>JavaScript</span>
-                </div>
-                <div class="technology-box sql">
-                    <span>SQL</span>
-                </div>
-                <div class="technology-box postgresql">
-                    <span>PostgreSQL</span>
-                </div>
-                <div class="technology-box postgis">
-                    <span>PostGIS</span>
-                </div>
-                <div class="technology-box leaflet">
-                    <span>Leaflet</span>
-                </div>
-                <div class="technology-box turf">
-                    <span>Turf</span>
-                </div>
-
-                <div class="technology-box ajax">
-                    <span>AJAX</span>
-                </div>
-                <div class="technology-box gdal">
-                    <span>GDAL</span>
-                </div>
-                <div class="col-xs-12" style="height: 10px;"></div>
-                <div class="technology-box api">
-                    <span>API</span>
-                </div>
-                <div class="technology-box html">
-                    <span>HTML</span>
-                </div>
-                <div class="technology-box css">
-                    <span>CSS</span>
-                </div>
-                <div class="technology-box python">
-                    <span>Python</span>
-                </div>
-            </div>
-            <br>
-            <h5 class="activities-title">Future Plans</h5>
-            <p class="project-text">The SWMT project is constantly evolving, with future plans aimed at expanding its capabilities and impact. Some envisioned enhancements include:</p>
-            <ul class="activities-list tick-list project-text">
-                <li>Developing a mobile-based version of SDMT for enhanced accessibility.</li>
-                <li>Establishing server connections between SWMT and Water ATMs, ePRV, SCADA, and GSM Data Loggers. Displaying real-time data from these sensor based systems in the web maps of SWMT. </li>
-                <li>Incorporating drone images for better DMA management. </li>
-            </ul>
-            <br>
-            <h5 class="activities-title">My Role</h5>
-            <p class="project-text">In addition to my expertise in water supply management, where I have received valuable insights from the DMA Management Expert, I proudly stand as the sole developer behind the creation of SWMT.</p>
-            <p class="project-text">To know more about the system, feel free to give me a knock at the contact page. </p>
-            <br><br><br>
-            
-
-        `;
-    } else if (project == 'project2') {
-        projectTitle = `
-            <p class="text-center project-title">SWMT Data Collection Application</p>
-        `;
-        projectDetails = `
-            <h5 class="activities-title">Overview</h5>
-            <p class="project-text">This application has been developed as part of SWMT to collect field data. The main aim of this application is to collect bulk-water meter (BWM) readings for NRW calculation. Field people use this application in their android mobile phones to collect data. These data are being directly transmitted to a PostgreSQL server.</p>
-            <h5 class="activities-title">Description</h5>
-            <ul class="activities-list tick-list project-text">
-                <li>Before going to the field, data collectors download account numbers (which is a unique identifier) for Deep Tubewells and DMA Chambers using the application. This data is stored in their mobile phones for offline accessibility.</li>
-                <li>The account numbers appear in a drop-down menu. After selecting one account number, related information for that account appears.</li>
-                <li>Data collectors inspect the meters at field and fill up the current readings and other related information in the app. Then they press the submit button and data is stored in their mobile phones. If it is needed, they can edit their own submitted data.</li>
-            </ul>
-            <div class="gallery">
-              <div class="project-image">
-                <img src="images/mobile_app.jpg" alt="Image 1">
-              </div>
-            </div>
-            <ul class="activities-list tick-list project-text">
-                <li>First, the submitted data is stored locally on their mobiles to reduce internet consumption. After coming to the office, they send the data to the server. </li>
-                <li>After the data is uploaded to the server, supervisors of the data collectors can view the data in their computers and edit it if required. There is a separate dashboard in SWMT to view and edit the field data. </li>
-            </ul>
-            <br>
-            <div class="iframe-container">
-                <iframe width="700" height="390" src="https://www.youtube.com/embed/x1jiQe4AIN0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <br>
-            <ul class="activities-list tick-list project-text">
-                <li>Surveyors can also take GPS readings. When they upload the readings to PostgreSQL server, these readings are converted into point feature using PostGIS functions. </li>
-                <li>The location and other associated information of point features can be viewed on the web maps of SWMT.</li>
-            </ul>
-            <br>
-            <h5 class="activities-title">Technologies</h5>
-            <div class="technologies">
-
-                <div class="technology-box php">
-                    <span>PHP</span>
-                </div>
-                <div class="technology-box javascript">
-                    <span>JavaScript</span>
-                </div>
-                <div class="technology-box sql">
-                    <span>SQL</span>
-                </div>
-                <div class="technology-box postgresql">
-                    <span>PostgreSQL</span>
-                </div>
-                <div class="technology-box postgis">
-                    <span>PostGIS</span>
-                </div>
-                <div class="technology-box leaflet">
-                    <span>Leaflet</span>
-                </div>
-                
-                <div class="technology-box ajax">
-                    <span>AJAX</span>
-                </div>
-                
-                <div class="technology-box html">
-                    <span>HTML</span>
-                </div>
-                <div class="technology-box css">
-                    <span>CSS</span>
-                </div>
-                
-            </div>
-            <br>
-            <h5 class="activities-title">My Role</h5>
-            <p class="project-text">I wrote all the codes to build this application and train the field people (more than 100) to use it.</p>
-            <p class="project-text">To know more about the system, feel free to give me a knock at the contact page. </p>
-            <br><br><br>
-            
-
-        `;
-
-    } else if (project == 'project3') {
-        projectTitle = `
-            <p class="text-center project-title">Drone Survey and WebGIS</p>
-        `;
-        projectDetails = `
-            <h5 class="activities-title">Overview</h5>
-            <p class="project-text">Images of high spatial resolution can be obtained by carrying out drone surveys. These images can be used for multitude of purposes. My purpose was to improve the quality of the base maps, so that different assets (like, valves, pipelines, service connections, etc.) can be located with accurate precision in the webgis portal. </p>
-            <h5 class="activities-title">Description</h5>
-            <ul class="activities-list tick-list project-text">
-                <li>People often use Google Satellite imagery. Basically, Google uses tiles to load the images very rapidly.</li>
-                <li>This can also be achieved with drone imagery using GDAL. The final mosaicked image from drone mapping can be divided into multiple zoom resolutions having thousands of tiles.</li>
-                <li>Finally, these tiles can be included in the WebGIS system for better user experience, similar to what I have done here (see the video).</li>
-                <li>You can use GeoServer to host your tiles or free services like WSRV (https://images.weserv.nl/), which is an image caching server that manipulates the images on-the-fly.</li>
-            </ul>
-            <div class="gallery">
-              <div class="project-image">
-                <img src="images/drone_workflow.jpg" alt="Image 1">
-              </div>
-            </div>
-
-            <div class="iframe-container">
-                <iframe width="700" height="390" src="https://www.youtube.com/embed/0EMe-40MInQ?si=EP1tYbsFdCA_BQFo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            
-            <br>
-            <h5 class="activities-title">Technologies</h5>
-            <div class="technologies">
-
-                <div class="technology-box arcgis">
-                    <span>Drone</span>
-                </div>
-                <div class="technology-box sql">
-                    <span>GDAL</span>
-                </div>
-                <div class="technology-box gdal">
-                    <span>Image Caching</span>
-                </div>
-                <div class="technology-box javascript">
-                    <span>Pix4D</span>
-                </div>
-                
-            </div>
-            <br>
-            
-
-        `;
-    } else if (project == 'project10') {
-        projectTitle = `
-            <p class="text-center project-title">Interactive WebMap with GeoPandas and Folium</p>
-        `;
-        projectDetails = `
-            <iframe src="interactive_dma_map.html" width="100%" height="700px" frameborder="0"></iframe>
-            <br><br><br>
-            
-
-        `;
-    } else if (project == 'project11') {
-        projectTitle = `
-            <p class="text-center project-title">Geospatial Plotting with Plotly</p>
-        `;
-        projectDetails = `
-            <iframe src="mapping_with_plotly.html" width="100%" height="700px" frameborder="0"></iframe>
-            <br><br><br>
-            
-
-        `;
-    } else if (project == 'project5') {
-        projectTitle = `
-           <p class="text-center project-title">Interactive WebMap with ArcGIS JavaScript API</p>
-        `;
-        projectDetails = `
-            <p>This web map application has been built using the Esri JavaScript API. The purpose of this application is to visualize and analyze geographic data by overlaying multiple layers onto a map canvas. The application is embedded within an HTML document and offers a user-friendly interface for exploring different spatial datasets.</p>
-            <p>I strongly suggest to see the web map in full screen from <a target='_blank' href="esri_javascript_api.html">here</a>.</p>
-            <p>Get the full code from my GitHub <a target='_blank' href="https://github.com/touhidurrahman/esri_javascript_api">repository</a></p>
-            <br>
-            <iframe src="esri_javascript_api.html" width="100%" height="800px" frameborder="0" allowfullscreen allow="geolocation"></iframe>
-            
-
-        `;
-    } else if (project == 'project6') {
-        projectTitle = `
-           <p class="text-center project-title">3D Mapping with ArcGIS Web AppBuilder</p>
-        `;
-        projectDetails = `
-            <p>ArcGIS Web AppBuilder is a good hands-on tool to create stunning 3D web maps. A good approach is to create the 3D models in ArcGIS Pro and then transfer those to ArcGIS Online (AGOL) for integrating into Web AppBuilder.
-            </p>
-            <p>Using Web AppBuilder, I have created this 3D map for a District Metered Area (DMA).
-                It showcases various DMA assets such as valves, pipelines, chambers, deep tube wells, and consumer connections in stunning 3D detail. You can also enhance your experience by experimenting with the shadow tool and selecting different base maps from the 'Basemap Gallery'.</p>
-            <br>
-            <div class="iframe-container">
-                <iframe width="800" height="450" src="https://www.youtube.com/embed/jgXjSK_wZi0?si=fPVlhnWM6f1PY66I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            
-
-        `;
-    } else if (project == 'project4') {
-        projectTitle = `
-           <p class="text-center project-title">3D Web Mapping with Drones</p>
-        `;
-        projectDetails = `
-            <p>After capturing images of my study area using a Mavic Air 2 drone, I have used Pix4D to mosaic those images and create an .obj file. After that, I have converted the .obj file to a .gltf file which has some benefits over .obj files such as being more efficient and supporting animations. </p>
-            <p>However, creating the 3D maps is a simple process. The real challenge is to display and share these 3D maps with all the users.</p>
-            <p>To do so, I am using the Three.js library. I have kept the .gltf files in a folder on my server and stored the file names in my database. This allows me to create a dropdown list where an user can select a model name and hit the load button to display the 3D map on the screen.</p>
-
-            <p>I strongly suggest to see the 3D models in full screen from <a target='_blank' href="https://www.dwasacbs.com/touhid/3d.php">here</a>.</p>
-           
-            <div class="iframe-container">
-                <iframe width="700" height="390" src="https://www.youtube.com/embed/rA0uYkqvLFM?si=PrmI44X8G66xpVQP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            
-
-        `;
-    } else if (project == 'project12') {
-        projectTitle = `
-           <p class="text-center project-title">Data Extraction and Map Preparation via FME</p>
-        `;
-        projectDetails = `
-            <p>FME (Feature Manipulation Engine) is a versatile data integration and transformation tool, widely used in GIS and ETL workflows, known for its ability to convert, filter, and manipulate data from various sources and formats with ease.</p>
-            <p>Here I am fetching data from the earthquake related API of United States Geological Survey (USGS) via FME. The data is in GeoJSON format. My aim is to determine the country wise earthquake frequency for the period of 2020 to 2023, and for 2017 to 2020. And finally, made a visual comparison. After performing the analysis, I am storing all the data in my PostGIS database. </p>
-           
-            <div class="gallery">
-              <div class="project-image">
-                <img src="images/fme.png" alt="Feature Manipulation Engine Workflow">
-              </div>
-            </div>
-            <br>
-            <div class="iframe-container">
-                <iframe width="700" height="390" src="https://www.youtube.com/embed/gRc9NlAIK_4?si=VMifu_IWbQIWgeev" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <br>
-            <h5 class="activities-title">Technologies</h5>
-            <div class="technologies">
-
-                <div class="technology-box php">
-                    <span>Feature Manipulation Engine (FME)</span>
-                </div>
-                <div class="technology-box javascript">
-                    <span>ETL</span>
-                </div>
-                <div class="technology-box sql">
-                    <span>API</span>
-                </div>
-            </div>
-            <br><br></br>
-
-
-            
-
-        `;
-    } else if (project == 'project13') {
-        projectTitle = `
-           <p class="text-center project-title">Automating Flood Vulnerability Analysis with ArcPy</p>
-        `;
-        projectDetails = `
-            <p>Imagine doing the same geospatial analysis for 100 land parcels. Repeating the same task not only consumes time but also risks costly errors.</p>
-            <p>The solution? Use ArcPy: a Python library for automating and customizing geoprocessing tasks. Any spatial analysis in ArcGIS can be automated with ArcPy. In the video attached, I demonstrate how to automate flood vulnerability analysis using ArcPy. You can adapt the script for your specific area by adjusting input files, paths, and values. </p>
-            <p>Get the full code from my GitHub <a target='_blank' href="https://github.com/touhidurrahman/arcpy_flood_analysis">repository</a></p>
-            <br>
-
-            <div class="iframe-container">
-                <iframe width="800" height="450" src="https://www.youtube.com/embed/RiBhSvVwUUA?si=rDQBC4OzgbiODOxt" title="Automating Flood Vulnerability Analysis with ArcPy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <br>
-            <h5 class="activities-title">Technologies</h5>
-            <div class="technologies">
-
-                <div class="technology-box ajax">
-                    <span>ArcPy</span>
-                </div>
-                <div class="technology-box leaflet">
-                    <span>Rasterio</span>
-                </div>
-                <div class="technology-box sql">
-                    <span>VS Code</span>
-                </div>
-            </div>
-            <br><br></br>
-
-
-            
-
-        `;
-    } else if (project == 'project14') {
-        projectTitle = `
-           <p class="text-center project-title">Landfill (waste disposal) Site Selection with ArcPy and Google Earth Engine's Python API</p>
-        `;
-        projectDetails = `
-            <p>One common problem everyone faces when replicating a suitability model to another area is the lack of data or the expertise to process the required satellite imagery. </p>
-            <p>The solution? Use ArcPy and Google Earth Engine together.</p>
-            <p>This model aims to find suitable sites for landfill (waste disposal). All you need to do is to provide a shapefile of your study area and the road network of that area. This model will do the rest of the data collection for you.</p>
-            <p>It is using GEE to extract NDVI from Landsat 9, Buildings from Google’s Open Building database, DEMs from SRTM, and Bare Land from the study of Demattê, José AM, et al. (2020).</p>
-            <p>After you have authenticated your GEE, the model will collect the data, sync it to your Google Drive and Local System, and will use the synced satellite imagery for the rest of the calculations. </p>
-            <p>Get the full code from my GitHub <a target='_blank' href="https://github.com/touhidurrahman/landfill_suitability_model">repository</a></p>
-            <br>
-
-            <div class="iframe-container">
-                <iframe width="800" height="450" src="https://www.youtube.com/embed/B6PcKJNXeKo?si=YYNyffK2Bf-JdSeT" title="Automating Flood Vulnerability Analysis with ArcPy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <br>
-            <h5 class="activities-title">Technologies</h5>
-            <div class="technologies">
-
-                <div class="technology-box ajax">
-                    <span>ArcPy</span>
-                </div>
-                <div class="technology-box leaflet">
-                    <span>Rasterio</span>
-                </div>
-                <div class="technology-box sql">
-                    <span>VS Code</span>
-                </div>
-                <div class="technology-box php">
-                    <span>Google Earth Engine</span>
-                </div>
-                <div class="technology-box postgis">
-                    <span>Geemap</span>
-                </div>
-                <div class="technology-box python">
-                    <span>Folium</span>
-                </div>
-            </div>
-            <br><br></br>
-
-
-            
-
-        `;
-    } else if (project == 'project7') {
-        projectTitle = `
-           <p class="text-center project-title">Interactive WebMap of Palestine</p>
-        `;
-        projectDetails = `
-            <p>I've created an interactive webmap designed to shed light on the atrocities of apartheid Israel. The ongoing genocide in Palestine cannot remain unmapped.</p>
-            <p>While searching for a detailed interactive map of the State of Palestine, I couldn't find a satisfactory one. Hence, I took it upon myself to develop one. </p>
-            <p>To access the web map, please visit: https:dwasacbs.com/palestine </p>
-            <p>The data utilized for this web map has been sourced from ACLED, OCHA, Reuters, and Al_Jazeera. </p>
-            <p>I'm committed to keeping this map regularly updated. Currently, I'm in the process of integrating the API from ACLED, ensuring this web map automatically receives the latest conflict data.</p>
-            <p>If you have access to additional data sources not currently featured in this web map, please share them with me.</p>
-            <br>
-
-            <div class="iframe-container">
-                <iframe width="800" height="450" src="https://www.youtube.com/embed/SVb2SXbYZbE?si=ZxX2XuLjq3iAFHet" title="Automating Flood Vulnerability Analysis with ArcPy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <br>
-            <h5 class="activities-title">Technologies</h5>
-            <div class="technologies">
-
-                <div class="technology-box ajax">
-                    <span>Leaflet</span>
-                </div>
-                <div class="technology-box leaflet">
-                    <span>PostGIS</span>
-                </div>
-                <div class="technology-box sql">
-                    <span>PostgreSQL</span>
-                </div>
-                <div class="technology-box php">
-                    <span>PHP</span>
-                </div>
-                <div class="technology-box postgis">
-                    <span>Python</span>
-                </div>
-                <div class="technology-box python">
-                    <span>JavaScript</span>
-                </div>
-                <div class="technology-box qgis">
-                    <span>AJAX</span>
-                </div>
-            </div>
-            <br><br></br>
-
-
-            
-
-        `;
-    }
-      
-    // Update project details in the HTML
-    document.getElementById('project-title').innerHTML = projectTitle;
-    document.getElementById('project-details').innerHTML = projectDetails;
-  }
-
-  const projectImages = document.querySelectorAll('.project-image');
-
-  projectImages.forEach((projectImage) => {
-    projectImage.addEventListener('mousemove', (e) => {
-      const image = projectImage.querySelector('img');
-      image.style.left = e.pageX + 'px';
-      image.style.top = e.pageY + 'px';
-    });
-
-    projectImage.addEventListener('mouseleave', () => {
-      const image = projectImage.querySelector('img');
-      image.style.left = '0';
-      image.style.top = '0';
-    });
-  });
-
-</script>
-
 </html>
