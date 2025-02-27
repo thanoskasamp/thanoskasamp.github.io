@@ -22,12 +22,14 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-sm navbar-light">
       <div class="container">
-        <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i>A. Kasampalis</a>
+        <a class="navbar-brand" href="index.html">
+          <i class='uil uil-user'></i>A. Kasampalis
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto"> 
@@ -42,40 +44,39 @@
       </div>
     </nav>
 
-    <!-- SPACER (optional) -->
+    <!-- MAIN CONTAINER FOR ALL PROJECT CONTENT -->
     <div class="container my-5">
+      
+      <!-- PAGE TITLE -->
       <div class="row">
         <div class="col text-center">
-          <h1 class="mb-4">Projects</h1>
+          <h1 class="mb-5">Projects</h1>
         </div>
       </div>
       
       <!-- PROJECT CARD #1 -->
       <div class="row mb-5">
         <div class="col-12">
-          <!-- The “shadow box” similar to your Bio page -->
           <div class="shadow mx-auto p-4" style="max-width: 900px;">
             <div class="row align-items-center">
               <!-- Thumbnail Image -->
               <div class="col-md-4 mb-3 mb-md-0">
-                <img src="images/procedures.jpg" alt="SWMT Project" class="img-fluid rounded">
+                <img src="https://github.com/thanoskasamp/thanoskasamp.github.io/blob/main/images/toumpa_accessibility.webp" alt="SWMT Project" class="img-fluid rounded">
               </div>
               <!-- Project Title / Description / Tags -->
               <div class="col-md-8">
                 <h4 class="project-title">Smart Water Management Tools</h4>
                 <p class="project-text">
-                  SWMT is a web-GIS based software designed to revolutionize DMA management. 
-                  With its user-friendly interface and powerful features, SWMT offers a comprehensive 
-                  solution for efficient and sustainable water distribution.
+                  SWMT is a web-GIS based software designed to revolutionize DMA management.
+                  With its user-friendly interface and powerful features, SWMT offers a
+                  comprehensive solution for efficient and sustainable water distribution.
                 </p>
-                <!-- Technologies (reuse your .technology-box styles) -->
                 <div class="mb-3">
                   <span class="technology-box php">PHP</span>
                   <span class="technology-box javascript">JavaScript</span>
                   <span class="technology-box sql">SQL</span>
                   <span class="technology-box postgis">PostGIS</span>
                 </div>
-                <!-- “More” Button -->
                 <a href="#" class="btn btn-outline-secondary">More</a>
               </div>
             </div>
@@ -83,63 +84,9 @@
         </div>
       </div>
 
-      <!-- PROJECT CARD #2 -->
-      <div class="row mb-5">
-        <div class="col-12">
-          <div class="shadow mx-auto p-4" style="max-width: 900px;">
-            <div class="row align-items-center">
-              <div class="col-md-4 mb-3 mb-md-0">
-                <img src="images/mobile_app.jpg" alt="Data Collection App" class="img-fluid rounded">
-              </div>
-              <div class="col-md-8">
-                <h4 class="project-title">Data Collection App</h4>
-                <p class="project-text">
-                  A companion mobile application for SWMT used by field teams to collect 
-                  and sync water-meter data directly into a PostgreSQL server, ensuring 
-                  real-time updates for accurate network analysis.
-                </p>
-                <div class="mb-3">
-                  <span class="technology-box php">PHP</span>
-                  <span class="technology-box javascript">JavaScript</span>
-                  <span class="technology-box postgresql">PostgreSQL</span>
-                  <span class="technology-box leaflet">Leaflet</span>
-                </div>
-                <a href="#" class="btn btn-outline-secondary">More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- ADD MORE PROJECT CARDS HERE (Project #2, #3, etc.) -->
 
-      <!-- PROJECT CARD #3 -->
-      <div class="row mb-5">
-        <div class="col-12">
-          <div class="shadow mx-auto p-4" style="max-width: 900px;">
-            <div class="row align-items-center">
-              <div class="col-md-4 mb-3 mb-md-0">
-                <img src="images/drone_workflow.jpg" alt="Drone Survey" class="img-fluid rounded">
-              </div>
-              <div class="col-md-8">
-                <h4 class="project-title">Drone Survey and WebGIS</h4>
-                <p class="project-text">
-                  High-resolution drone imagery integrated into web-based GIS applications. 
-                  Improves base-map accuracy and provides unparalleled detail for water utilities 
-                  and other geospatial analyses.
-                </p>
-                <div class="mb-3">
-                  <span class="technology-box sql">GDAL</span>
-                  <span class="technology-box gdal">Image Caching</span>
-                  <span class="technology-box javascript">Pix4D</span>
-                </div>
-                <a href="#" class="btn btn-outline-secondary">More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ADD MORE PROJECT CARDS AS NEEDED... -->
-    </div>
+    </div> <!-- END .container for projects -->
 
     <!-- FOOTER -->
     <footer class="footer text-center py-3">
@@ -159,6 +106,15 @@
     <script>
       // Footer Year
       document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- OPTIONAL REFRESH PAGE SCRIPT -->
+    <script>
+      window.onload = function() {
+        setTimeout(function() {
+          window.scrollTo(0,0);
+        }, 10); // Adjust the timeout as necessary
+      }
     </script>
 
   </body>
