@@ -188,6 +188,7 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   padding: 10px;
   transition: background-color 0.3s, box-shadow 0.3s;
+  background-color: rgba(255, 255, 255, 0.9); /* Increased opacity for better visibility */
 }
 
 .shadow h5:hover {
