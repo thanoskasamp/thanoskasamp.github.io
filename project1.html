@@ -75,7 +75,10 @@
             <!-- Using your .technology-box classes for each tool/skill -->
             <span class="technology-box python">Python</span>
             <span class="technology-box qgis">QGIS</span>
-            <span class="technology-box css">Jupyter Notebook</span>
+            <span class="technology-box ajax">PostGIS</span>
+            <span class="technology-box css">Geoserver</span>
+            <span class="technology-box postgresql">Nginx</span>
+            <span class="technology-box ajax">Docker</span>
           </div>
         </div>
 
@@ -87,7 +90,7 @@
           <p>
             This project was designed to enhance the accessibility of public transportation in the neighborhoods of Toumpa and
             Ano Poli in Thessaloniki. The focus was on using geospatial data analysis to understand how easily people can walk to 
-            their nearest bus stops, aiming to help city planners make better decisions and improve public transit options.
+            their nearest bus stops.
           </p>
         </div>
 
@@ -96,32 +99,67 @@
         <!-- METHODOLOGY SECTION -->
         <div class="mb-4">
           <h4>Methodology:</h4>
+
+          <!-- PART 1: ANALYSIS -->
+          <h5>Analysis</h5>
           <ol>
             <li>
-              <strong>Data Collection:</strong> The data was collected from OpenStreetMap using the OSMnx Python library,
-               which included information about buildings, streets, and bus stop locations.
+              <strong>Data Collection:</strong> 
+              The data was collected from OpenStreetMap using the OSMnx Python library, which included information about buildings, streets, and bus stop locations.
             </li>
             <li>
-              <strong>Data Processing:</strong> The data was cleaned and organized to ensure it was accurate and usable for analysis.
-               Scripts in Python were used to sort out necessary information and align all data to a common format for detailed examination.
+              <strong>Data Processing:</strong> 
+              The data was cleaned and organized to ensure it was accurate and usable for analysis. Python scripts were employed to align all data to a common format for detailed examination.
             </li>
             <li>
-              <strong>Network Analysis:</strong> The project involved calculating the shortest walking routes to bus stops using network analysis methods.
-               Buildings were connected to the closest points on the walking network, allowing the calculation of the most efficient paths for pedestrians.
+              <strong>Network Analysis:</strong> 
+              Calculated the shortest walking routes to bus stops by connecting buildings to the closest points on the walking network, determining the most efficient paths for pedestrians.
             </li>
             <li>
-                <strong>QGIS Application</strong> QGIS was employed to produce static maps that visually represent the data and analysis results, providing clear, 
-                geographic visualizations of walking routes and accessibility.
+              <strong>QGIS Application:</strong> 
+              QGIS was used to produce static maps that visually represent the data and analysis results, providing clear geographic visualizations of walking routes and accessibility.
+            </li>
+          </ol>
+
+          <!-- PART 2: WEBGIS -->
+          <h5>WebGIS</h5>
+
+          <!-- Frontend Section -->
+          <h6>Frontend</h6>
+          <ol>
+            <li>
+              <strong>Interactive Mapping with Folium:</strong> 
+              Created dynamic, interactive maps using the Folium Python library as the front-end mapping solution.
+            </li>
+          </ol>
+
+          <!-- Backend Section -->
+          <h6>Backend</h6>
+          <ol>
+            <li>
+              <strong>Docker & Docker Compose:</strong> 
+              Containerized services to simplify deployment and manage multiple components seamlessly.
             </li>
             <li>
-                <strong>Interactive Mapping</strong> Interactive maps were created using the Folium library in Python, enabling dynamic visualization of the data 
-                that users can interact with to explore different aspects of public transportation accessibility.
+              <strong>PostGIS:</strong> 
+              Utilized as a spatially enabled PostgreSQL database for robust geospatial data storage and querying.
+            </li>
+            <li>
+              <strong>GeoServer:</strong> 
+              Distributed geospatial data via OGC standards (WMS, WFS) to power the interactive maps.
+            </li>
+            <li>
+              <strong>NGINX Reverse Proxy:</strong> 
+              Configured to route requests to GeoServer securely.
+            </li>
+            <li>
+              <strong>Certbot SSL:</strong> 
+              Automated SSL certificate issuance and renewal to ensure secure HTTPS connections.
             </li>
           </ol>
         </div>
 
-        <hr />
-
+        
         <!-- RESULTS SECTION (Optional) -->
         <div class="mb-4">
           <h4>Results:</h4>
@@ -134,16 +172,26 @@
         <hr />
 
         <!-- CONCLUSIONS / FUTURE DIRECTIONS (Optional) -->
-        <div class="mb-4">
-          <h4>Conclusions &amp; Future Directions:</h4>
-          <p>
-            The findings demonstrate the usefulness of using map-based network analysis for city planning, 
-            particularly in enhancing public transport systems. Suggestions for future work include expanding
-            the analysis to more areas, incorporating live traffic updates to adjust walking times, and developing an app
-            that provides real-time transport accessibility information to residents.
-          </p>
-        </div>
+        <h4>Limitations & Future Directions:</h4>
 
+        <p><strong>Limitations:</strong></p>
+        <ol>
+          <li>
+            Folium doesn’t dynamically retrieve attributes from WMS or WFS layers,
+            so a WFS layer is stored directly in the HTML, increasing file size.
+          </li>
+          <li>
+            The custom HTML legend on the web maps, does not display in full-screen mode.
+          </li>
+        </ol>
+        
+        <p><strong>Future Directions:</strong></p>
+        <ol>
+          <li>Enhance the front end with custom JavaScript for more dynamic, interactive features.</li>
+          <li>Launch a dedicated WebGIS application.</li>
+        </ol>
+        
+        
         <hr />
 
         <!-- STATIC MAPS-->
