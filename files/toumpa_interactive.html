@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_bc91feea532adad82e0f540646f519ad {
+                #map_6990c97cce150b7ac80cea1a8fdd1c0a {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -41,18 +41,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-realtime/2.2.0/leaflet-realtime.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.css"/>
+    
+            <style>
+                #export {
+                    position: absolute;
+                    top: 5px;
+                    right: 10px;
+                    z-index: 999;
+                    background: white;
+                    color: black;
+                    padding: 6px;
+                    border-radius: 4px;
+                    font-family: 'Helvetica Neue';
+                    cursor: pointer;
+                    font-size: 12px;
+                    text-decoration: none;
+                    top: 90px;
+                }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.css"/>
 </head>
 <body>
     
     
-            <div class="folium-map" id="map_bc91feea532adad82e0f540646f519ad" ></div>
+            <div class="folium-map" id="map_6990c97cce150b7ac80cea1a8fdd1c0a" ></div>
         
+    <a href='#' id='export'>Export</a>
 </body>
 <script>
     
     
-            var map_bc91feea532adad82e0f540646f519ad = L.map(
-                "map_bc91feea532adad82e0f540646f519ad",
+            var map_6990c97cce150b7ac80cea1a8fdd1c0a = L.map(
+                "map_6990c97cce150b7ac80cea1a8fdd1c0a",
                 {
                     center: [40.618, 22.975],
                     crs: L.CRS.EPSG3857,
@@ -69,7 +93,7 @@
 
         
     
-            var tile_layer_df6672f81a6fa5aba5cc27f7d67593dd = L.tileLayer(
+            var tile_layer_452542938ec849a87df6be676555ab93 = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -86,10 +110,10 @@
             );
         
     
-            tile_layer_df6672f81a6fa5aba5cc27f7d67593dd.addTo(map_bc91feea532adad82e0f540646f519ad);
+            tile_layer_452542938ec849a87df6be676555ab93.addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
         
     
-            var tile_layer_bc7b3686e2ea739204221e8875c40490 = L.tileLayer(
+            var tile_layer_9985e693329881d4a398323192649e04 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -119,55 +143,55 @@
         L.control.customControl = function(opts) {
             return new L.Control.CustomControl(opts);
         }
-        L.control.customControl({ position: "bottomright" }).addTo(map_bc91feea532adad82e0f540646f519ad);
+        L.control.customControl({ position: "bottomright" }).addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
         
     
-            tile_layer_df6672f81a6fa5aba5cc27f7d67593dd.addTo(map_bc91feea532adad82e0f540646f519ad);
+            tile_layer_452542938ec849a87df6be676555ab93.addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
         
     
-            var macro_element_87163b303122116effb3f7e456259c72 = L.tileLayer.wms(
+            var macro_element_cb0b6caa7970dd36b6a8a7442afe9713 = L.tileLayer.wms(
                 "https://thanosgis.me/geoserver/wms",
                 {"attribution": "", "format": "image/png", "layers": "project1:buildings_toumpa", "maxZoom": 20, "styles": "", "transparent": true, "version": "1.1.1"}
             );
         
     
-            macro_element_87163b303122116effb3f7e456259c72.addTo(map_bc91feea532adad82e0f540646f519ad);
+            macro_element_cb0b6caa7970dd36b6a8a7442afe9713.addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
         
     
-            var macro_element_156f836f91efa70938bc268b76c84a65 = L.tileLayer.wms(
+            var macro_element_a97e7539ea464d4412b6d7d5f474ecca = L.tileLayer.wms(
                 "https://thanosgis.me/geoserver/wms",
                 {"attribution": "", "format": "image/png", "layers": "project1:area_toumpa", "maxZoom": 20, "styles": "", "transparent": true, "version": "1.1.1"}
             );
         
     
-            macro_element_156f836f91efa70938bc268b76c84a65.addTo(map_bc91feea532adad82e0f540646f519ad);
+            macro_element_a97e7539ea464d4412b6d7d5f474ecca.addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
         
     
-            var macro_element_2333760a81ea39989f2b008f03cae180 = L.tileLayer.wms(
+            var macro_element_839114b29d42148fad88ea4828b732a3 = L.tileLayer.wms(
                 "https://thanosgis.me/geoserver/wms",
                 {"attribution": "", "format": "image/png", "layers": "project1:walking_network_toumpa", "maxZoom": 20, "styles": "", "transparent": true, "version": "1.1.1"}
             );
         
     
-            macro_element_2333760a81ea39989f2b008f03cae180.addTo(map_bc91feea532adad82e0f540646f519ad);
+            macro_element_839114b29d42148fad88ea4828b732a3.addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
         
     
-            var feature_group_124ad9e844858d14e2b95599f756e384 = L.featureGroup(
+            var feature_group_de85864f1dd76bd95fe234611f946954 = L.featureGroup(
                 {
 }
             );
         
     
-            var marker_cluster_77d8c9828b1ec60449e428d0708a12fd = L.markerClusterGroup(
+            var marker_cluster_4bb41bb40d100afd1b599357274a59e9 = L.markerClusterGroup(
                 {
 }
             );
         
     
-            marker_cluster_77d8c9828b1ec60449e428d0708a12fd.addTo(feature_group_124ad9e844858d14e2b95599f756e384);
+            marker_cluster_4bb41bb40d100afd1b599357274a59e9.addTo(feature_group_de85864f1dd76bd95fe234611f946954);
         
     
-            var realtime_b43ac2b089b1f383e6b6839e2ee4caf1 = L.realtime(
+            var realtime_1060509763596dd0ab82beb31c6a4e15 = L.realtime(
             "https://thanosgis.me/geoserver/wfs?service=WFS\u0026version=2.0.0\u0026request=GetFeature\u0026typeName=project1:bus_stops_toumpa\u0026srsName=EPSG:4326\u0026outputFormat=application/json",
             {
   "pointToLayer": 
@@ -191,27 +215,27 @@ function(feature, latlng) {
   "interval": 60000,
   "getFeatureId": (f) => { return f.properties.stop_id; },
   "removeMissing": false,
-  "container": marker_cluster_77d8c9828b1ec60449e428d0708a12fd,
+  "container": marker_cluster_4bb41bb40d100afd1b599357274a59e9,
 }
             );
-            feature_group_124ad9e844858d14e2b95599f756e384.addLayer(
-                realtime_b43ac2b089b1f383e6b6839e2ee4caf1._container
+            feature_group_de85864f1dd76bd95fe234611f946954.addLayer(
+                realtime_1060509763596dd0ab82beb31c6a4e15._container
             );
         
     
-            realtime_b43ac2b089b1f383e6b6839e2ee4caf1.addTo(feature_group_124ad9e844858d14e2b95599f756e384);
+            realtime_1060509763596dd0ab82beb31c6a4e15.addTo(feature_group_de85864f1dd76bd95fe234611f946954);
         
     
-            feature_group_124ad9e844858d14e2b95599f756e384.addTo(map_bc91feea532adad82e0f540646f519ad);
+            feature_group_de85864f1dd76bd95fe234611f946954.addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
         
     
-            var feature_group_156df4f3e80afa0e3ec757b2d930d18b = L.featureGroup(
+            var feature_group_4d646aa95f9b0e91419ad6f464283cc3 = L.featureGroup(
                 {
 }
             );
         
     
-            var realtime_9b937e8325c87ef4f7fcd309a3db5cef = L.realtime(
+            var realtime_56dbefd7d5cc770e7a594d79a2127c44 = L.realtime(
             "https://thanosgis.me/geoserver/wfs?service=WFS\u0026version=2.0.0\u0026request=GetFeature\u0026typeName=project1:buildings_toumpa\u0026srsName=EPSG:4326\u0026outputFormat=application/json",
             {
   "style": 
@@ -245,15 +269,15 @@ function onEachFeature(feature, layer) {
   "removeMissing": false,
 }
             );
-            feature_group_156df4f3e80afa0e3ec757b2d930d18b.addLayer(
-                realtime_9b937e8325c87ef4f7fcd309a3db5cef._container
+            feature_group_4d646aa95f9b0e91419ad6f464283cc3.addLayer(
+                realtime_56dbefd7d5cc770e7a594d79a2127c44._container
             );
         
     
-            realtime_9b937e8325c87ef4f7fcd309a3db5cef.addTo(feature_group_156df4f3e80afa0e3ec757b2d930d18b);
+            realtime_56dbefd7d5cc770e7a594d79a2127c44.addTo(feature_group_4d646aa95f9b0e91419ad6f464283cc3);
         
     
-            feature_group_156df4f3e80afa0e3ec757b2d930d18b.addTo(map_bc91feea532adad82e0f540646f519ad);
+            feature_group_4d646aa95f9b0e91419ad6f464283cc3.addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
         
     
             L.control.fullscreen(
@@ -263,59 +287,136 @@ function onEachFeature(feature, layer) {
   "titleCancel": "Exit Full Screen",
   "forceSeparateButton": false,
 }
-            ).addTo(map_bc91feea532adad82e0f540646f519ad);
+            ).addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
         
     
-            var layer_control_e481d8cac6fd831a4afff73586409274_layers = {
+            var options = {
+              position: "topleft",
+              draw: {},
+              edit: {},
+            }
+                // FeatureGroup is to store editable layers.
+                var drawnItems_draw_control_7676111c1c2d4268e94fce1f96f9308b =
+                    new L.featureGroup().addTo(
+                        map_6990c97cce150b7ac80cea1a8fdd1c0a
+                    );
+
+            options.edit.featureGroup = drawnItems_draw_control_7676111c1c2d4268e94fce1f96f9308b;
+            var draw_control_7676111c1c2d4268e94fce1f96f9308b = new L.Control.Draw(
+                options
+            ).addTo( map_6990c97cce150b7ac80cea1a8fdd1c0a );
+            map_6990c97cce150b7ac80cea1a8fdd1c0a.on(L.Draw.Event.CREATED, function(e) {
+                var layer = e.layer,
+                    type = e.layerType;
+                var coords = JSON.stringify(layer.toGeoJSON());
+                layer.on('click', function() {
+                    alert(coords);
+                    console.log(coords);
+                });
+                drawnItems_draw_control_7676111c1c2d4268e94fce1f96f9308b.addLayer(layer);
+            });
+            map_6990c97cce150b7ac80cea1a8fdd1c0a.on('draw:created', function(e) {
+                drawnItems_draw_control_7676111c1c2d4268e94fce1f96f9308b.addLayer(e.layer);
+            });
+
+            
+            document.getElementById('export').onclick = function(e) {
+                var data = drawnItems_draw_control_7676111c1c2d4268e94fce1f96f9308b.toGeoJSON();
+                var convertedData = 'text/json;charset=utf-8,'
+                    + encodeURIComponent(JSON.stringify(data));
+                document.getElementById('export').setAttribute(
+                    'href', 'data:' + convertedData
+                );
+                document.getElementById('export').setAttribute(
+                    'download', "data.geojson"
+                );
+            }
+            
+        
+    
+            var locate_control_3f7dbc36eae4c058e594be4b810ab42e = L.control.locate(
+                {}
+            ).addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
+            
+        
+    
+            var layer_control_46f23928f7b6977ed3de0478c3dee883_layers = {
                 base_layers : {
-                    "CartoDB Positron" : tile_layer_df6672f81a6fa5aba5cc27f7d67593dd,
-                    "OpenStreetMap" : tile_layer_bc7b3686e2ea739204221e8875c40490,
+                    "CartoDB Positron" : tile_layer_452542938ec849a87df6be676555ab93,
+                    "OpenStreetMap" : tile_layer_9985e693329881d4a398323192649e04,
                 },
                 overlays :  {
-                    "Buildings Toumpa (WMS)" : macro_element_87163b303122116effb3f7e456259c72,
-                    "Area of Toumpa (WMS)" : macro_element_156f836f91efa70938bc268b76c84a65,
-                    "Walking network (WMS)" : macro_element_2333760a81ea39989f2b008f03cae180,
-                    "Bus stops (WFS)" : feature_group_124ad9e844858d14e2b95599f756e384,
-                    "Attributes (WFS)" : feature_group_156df4f3e80afa0e3ec757b2d930d18b,
+                    "Buildings Toumpa (WMS)" : macro_element_cb0b6caa7970dd36b6a8a7442afe9713,
+                    "Area of Toumpa (WMS)" : macro_element_a97e7539ea464d4412b6d7d5f474ecca,
+                    "Walking network (WMS)" : macro_element_839114b29d42148fad88ea4828b732a3,
+                    "Bus stops (WFS)" : feature_group_de85864f1dd76bd95fe234611f946954,
+                    "Attributes (WFS)" : feature_group_4d646aa95f9b0e91419ad6f464283cc3,
                 },
             };
-            let layer_control_e481d8cac6fd831a4afff73586409274 = L.control.layers(
-                layer_control_e481d8cac6fd831a4afff73586409274_layers.base_layers,
-                layer_control_e481d8cac6fd831a4afff73586409274_layers.overlays,
+            let layer_control_46f23928f7b6977ed3de0478c3dee883 = L.control.layers(
+                layer_control_46f23928f7b6977ed3de0478c3dee883_layers.base_layers,
+                layer_control_46f23928f7b6977ed3de0478c3dee883_layers.overlays,
                 {
   "position": "topright",
   "collapsed": true,
   "autoZIndex": true,
 }
-            ).addTo(map_bc91feea532adad82e0f540646f519ad);
+            ).addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
 
         
     
-            tile_layer_df6672f81a6fa5aba5cc27f7d67593dd.addTo(map_bc91feea532adad82e0f540646f519ad);
+            tile_layer_452542938ec849a87df6be676555ab93.addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
         
     
-            macro_element_87163b303122116effb3f7e456259c72.addTo(map_bc91feea532adad82e0f540646f519ad);
+            macro_element_cb0b6caa7970dd36b6a8a7442afe9713.addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
         
     
-            macro_element_156f836f91efa70938bc268b76c84a65.addTo(map_bc91feea532adad82e0f540646f519ad);
+            macro_element_a97e7539ea464d4412b6d7d5f474ecca.addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
         
     
-            macro_element_2333760a81ea39989f2b008f03cae180.addTo(map_bc91feea532adad82e0f540646f519ad);
+            macro_element_839114b29d42148fad88ea4828b732a3.addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
         
     
-            marker_cluster_77d8c9828b1ec60449e428d0708a12fd.addTo(feature_group_124ad9e844858d14e2b95599f756e384);
+            marker_cluster_4bb41bb40d100afd1b599357274a59e9.addTo(feature_group_de85864f1dd76bd95fe234611f946954);
         
     
-            realtime_b43ac2b089b1f383e6b6839e2ee4caf1.addTo(feature_group_124ad9e844858d14e2b95599f756e384);
+            realtime_1060509763596dd0ab82beb31c6a4e15.addTo(feature_group_de85864f1dd76bd95fe234611f946954);
         
     
-            feature_group_124ad9e844858d14e2b95599f756e384.addTo(map_bc91feea532adad82e0f540646f519ad);
+            feature_group_de85864f1dd76bd95fe234611f946954.addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
         
     
-            realtime_9b937e8325c87ef4f7fcd309a3db5cef.addTo(feature_group_156df4f3e80afa0e3ec757b2d930d18b);
+            realtime_56dbefd7d5cc770e7a594d79a2127c44.addTo(feature_group_4d646aa95f9b0e91419ad6f464283cc3);
         
     
-            feature_group_156df4f3e80afa0e3ec757b2d930d18b.addTo(map_bc91feea532adad82e0f540646f519ad);
+            feature_group_4d646aa95f9b0e91419ad6f464283cc3.addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
+        
+    
+            tile_layer_452542938ec849a87df6be676555ab93.addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
+        
+    
+            macro_element_cb0b6caa7970dd36b6a8a7442afe9713.addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
+        
+    
+            macro_element_a97e7539ea464d4412b6d7d5f474ecca.addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
+        
+    
+            macro_element_839114b29d42148fad88ea4828b732a3.addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
+        
+    
+            marker_cluster_4bb41bb40d100afd1b599357274a59e9.addTo(feature_group_de85864f1dd76bd95fe234611f946954);
+        
+    
+            realtime_1060509763596dd0ab82beb31c6a4e15.addTo(feature_group_de85864f1dd76bd95fe234611f946954);
+        
+    
+            feature_group_de85864f1dd76bd95fe234611f946954.addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
+        
+    
+            realtime_56dbefd7d5cc770e7a594d79a2127c44.addTo(feature_group_4d646aa95f9b0e91419ad6f464283cc3);
+        
+    
+            feature_group_4d646aa95f9b0e91419ad6f464283cc3.addTo(map_6990c97cce150b7ac80cea1a8fdd1c0a);
         
 </script>
 </html>
