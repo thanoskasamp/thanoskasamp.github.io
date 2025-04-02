@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_434f78505b950e1ab14a2eab2e7686dd {
+                #map_bc91feea532adad82e0f540646f519ad {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -45,52 +45,14 @@
 <body>
     
     
-            <div class="folium-map" id="map_434f78505b950e1ab14a2eab2e7686dd" ></div>
+            <div class="folium-map" id="map_bc91feea532adad82e0f540646f519ad" ></div>
         
-    
-<div id='maplegend' class='maplegend'
-     style='position: fixed; z-index:1000000 !important; bottom: 20px; right: 20px;
-            border:2px solid grey; background-color:rgba(255, 255, 255, 0.9);
-            border-radius:6px; padding: 10px; font-size:14px;'>
-
-    <div class='legend-title'>Walking time (min)</div>
-    <ul style="list-style:none; margin:0; padding:0;">
-      <li>
-        <span style='display:inline-block; width:12px; height:12px; border-radius:50%;
-                     margin-right:8px; background:#fde725;'></span>
-        0 - 2
-      </li>
-      <li>
-        <span style='display:inline-block; width:12px; height:12px; border-radius:50%;
-                     margin-right:8px; background:#35b779;'></span>
-        2 - 5
-      </li>
-      <li>
-        <span style='display:inline-block; width:12px; height:12px; border-radius:50%;
-                     margin-right:8px; background:#31688e;'></span>
-        5 - 10
-      </li>
-      <li>
-        <span style='display:inline-block; width:12px; height:12px; border-radius:50%;
-                     margin-right:8px; background:#440154;'></span>
-        10 - 15
-      </li>
-    </ul>
-</div>
-
-<style>
-  .maplegend .legend-title {
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-</style>
 </body>
 <script>
     
     
-            var map_434f78505b950e1ab14a2eab2e7686dd = L.map(
-                "map_434f78505b950e1ab14a2eab2e7686dd",
+            var map_bc91feea532adad82e0f540646f519ad = L.map(
+                "map_bc91feea532adad82e0f540646f519ad",
                 {
                     center: [40.618, 22.975],
                     crs: L.CRS.EPSG3857,
@@ -107,7 +69,7 @@
 
         
     
-            var tile_layer_784a8aab8f29f95712865dc054988c6d = L.tileLayer(
+            var tile_layer_df6672f81a6fa5aba5cc27f7d67593dd = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -124,10 +86,10 @@
             );
         
     
-            tile_layer_784a8aab8f29f95712865dc054988c6d.addTo(map_434f78505b950e1ab14a2eab2e7686dd);
+            tile_layer_df6672f81a6fa5aba5cc27f7d67593dd.addTo(map_bc91feea532adad82e0f540646f519ad);
         
     
-            var tile_layer_5b2311879171b65eed3bcef07f5ab6c3 = L.tileLayer(
+            var tile_layer_bc7b3686e2ea739204221e8875c40490 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -144,52 +106,68 @@
             );
         
     
-            tile_layer_784a8aab8f29f95712865dc054988c6d.addTo(map_434f78505b950e1ab14a2eab2e7686dd);
+        L.Control.CustomControl = L.Control.extend({
+            onAdd: function(map) {
+                var div = L.DomUtil.create('div');
+                div.innerHTML = `<div id='maplegend' class='maplegend'      style='z-index:1000000 !important;             border:2px solid grey; background-color:rgba(255, 255, 255, 0.9);             border-radius:6px; padding: 10px; font-size:14px;'>     <div class='legend-title'>Walking time (min)</div>     <ul style="list-style:none; margin:0; padding:0;">       <li>         <span style='display:inline-block; width:12px; height:12px; border-radius:50%;                      margin-right:8px; background:#fde725;'></span>         0 - 2       </li>       <li>         <span style='display:inline-block; width:12px; height:12px; border-radius:50%;                      margin-right:8px; background:#35b779;'></span>         2 - 5       </li>       <li>         <span style='display:inline-block; width:12px; height:12px; border-radius:50%;                      margin-right:8px; background:#31688e;'></span>         5 - 10       </li>       <li>         <span style='display:inline-block; width:12px; height:12px; border-radius:50%;                      margin-right:8px; background:#440154;'></span>         10 - 15       </li>     </ul> </div> <style>   .maplegend .legend-title {     text-align: center;     font-weight: bold;     margin-bottom: 5px;   } </style> `;
+                return div;
+            },
+            onRemove: function(map) {
+                // Nothing required here.
+            }
+        });
+        L.control.customControl = function(opts) {
+            return new L.Control.CustomControl(opts);
+        }
+        L.control.customControl({ position: "bottomright" }).addTo(map_bc91feea532adad82e0f540646f519ad);
         
     
-            var macro_element_d2f8257c10dd528a6edcf2d63dd1faec = L.tileLayer.wms(
+            tile_layer_df6672f81a6fa5aba5cc27f7d67593dd.addTo(map_bc91feea532adad82e0f540646f519ad);
+        
+    
+            var macro_element_87163b303122116effb3f7e456259c72 = L.tileLayer.wms(
                 "https://thanosgis.me/geoserver/wms",
                 {"attribution": "", "format": "image/png", "layers": "project1:buildings_toumpa", "maxZoom": 20, "styles": "", "transparent": true, "version": "1.1.1"}
             );
         
     
-            macro_element_d2f8257c10dd528a6edcf2d63dd1faec.addTo(map_434f78505b950e1ab14a2eab2e7686dd);
+            macro_element_87163b303122116effb3f7e456259c72.addTo(map_bc91feea532adad82e0f540646f519ad);
         
     
-            var macro_element_7f08e5b46817ed5831f79d6f1e566940 = L.tileLayer.wms(
+            var macro_element_156f836f91efa70938bc268b76c84a65 = L.tileLayer.wms(
                 "https://thanosgis.me/geoserver/wms",
                 {"attribution": "", "format": "image/png", "layers": "project1:area_toumpa", "maxZoom": 20, "styles": "", "transparent": true, "version": "1.1.1"}
             );
         
     
-            macro_element_7f08e5b46817ed5831f79d6f1e566940.addTo(map_434f78505b950e1ab14a2eab2e7686dd);
+            macro_element_156f836f91efa70938bc268b76c84a65.addTo(map_bc91feea532adad82e0f540646f519ad);
         
     
-            var macro_element_eaa64f4ad2b60e1786a4c27f1fe9e67f = L.tileLayer.wms(
+            var macro_element_2333760a81ea39989f2b008f03cae180 = L.tileLayer.wms(
                 "https://thanosgis.me/geoserver/wms",
                 {"attribution": "", "format": "image/png", "layers": "project1:walking_network_toumpa", "maxZoom": 20, "styles": "", "transparent": true, "version": "1.1.1"}
             );
         
     
-            macro_element_eaa64f4ad2b60e1786a4c27f1fe9e67f.addTo(map_434f78505b950e1ab14a2eab2e7686dd);
+            macro_element_2333760a81ea39989f2b008f03cae180.addTo(map_bc91feea532adad82e0f540646f519ad);
         
     
-            var feature_group_21bf239025b2243f415751e8c191d758 = L.featureGroup(
+            var feature_group_124ad9e844858d14e2b95599f756e384 = L.featureGroup(
                 {
 }
             );
         
     
-            var marker_cluster_8726fe63f04b71a4e215da6c9fde42bb = L.markerClusterGroup(
+            var marker_cluster_77d8c9828b1ec60449e428d0708a12fd = L.markerClusterGroup(
                 {
 }
             );
         
     
-            marker_cluster_8726fe63f04b71a4e215da6c9fde42bb.addTo(feature_group_21bf239025b2243f415751e8c191d758);
+            marker_cluster_77d8c9828b1ec60449e428d0708a12fd.addTo(feature_group_124ad9e844858d14e2b95599f756e384);
         
     
-            var realtime_76684bdcfc8cf8bfdf49a1655ebe77ee = L.realtime(
+            var realtime_b43ac2b089b1f383e6b6839e2ee4caf1 = L.realtime(
             "https://thanosgis.me/geoserver/wfs?service=WFS\u0026version=2.0.0\u0026request=GetFeature\u0026typeName=project1:bus_stops_toumpa\u0026srsName=EPSG:4326\u0026outputFormat=application/json",
             {
   "pointToLayer": 
@@ -213,27 +191,27 @@ function(feature, latlng) {
   "interval": 60000,
   "getFeatureId": (f) => { return f.properties.stop_id; },
   "removeMissing": false,
-  "container": marker_cluster_8726fe63f04b71a4e215da6c9fde42bb,
+  "container": marker_cluster_77d8c9828b1ec60449e428d0708a12fd,
 }
             );
-            feature_group_21bf239025b2243f415751e8c191d758.addLayer(
-                realtime_76684bdcfc8cf8bfdf49a1655ebe77ee._container
+            feature_group_124ad9e844858d14e2b95599f756e384.addLayer(
+                realtime_b43ac2b089b1f383e6b6839e2ee4caf1._container
             );
         
     
-            realtime_76684bdcfc8cf8bfdf49a1655ebe77ee.addTo(feature_group_21bf239025b2243f415751e8c191d758);
+            realtime_b43ac2b089b1f383e6b6839e2ee4caf1.addTo(feature_group_124ad9e844858d14e2b95599f756e384);
         
     
-            feature_group_21bf239025b2243f415751e8c191d758.addTo(map_434f78505b950e1ab14a2eab2e7686dd);
+            feature_group_124ad9e844858d14e2b95599f756e384.addTo(map_bc91feea532adad82e0f540646f519ad);
         
     
-            var feature_group_e36934e44da6829b8c8f41ccd6f9775c = L.featureGroup(
+            var feature_group_156df4f3e80afa0e3ec757b2d930d18b = L.featureGroup(
                 {
 }
             );
         
     
-            var realtime_924eb108c70e292e7c2ef80bbc214302 = L.realtime(
+            var realtime_9b937e8325c87ef4f7fcd309a3db5cef = L.realtime(
             "https://thanosgis.me/geoserver/wfs?service=WFS\u0026version=2.0.0\u0026request=GetFeature\u0026typeName=project1:buildings_toumpa\u0026srsName=EPSG:4326\u0026outputFormat=application/json",
             {
   "style": 
@@ -267,15 +245,15 @@ function onEachFeature(feature, layer) {
   "removeMissing": false,
 }
             );
-            feature_group_e36934e44da6829b8c8f41ccd6f9775c.addLayer(
-                realtime_924eb108c70e292e7c2ef80bbc214302._container
+            feature_group_156df4f3e80afa0e3ec757b2d930d18b.addLayer(
+                realtime_9b937e8325c87ef4f7fcd309a3db5cef._container
             );
         
     
-            realtime_924eb108c70e292e7c2ef80bbc214302.addTo(feature_group_e36934e44da6829b8c8f41ccd6f9775c);
+            realtime_9b937e8325c87ef4f7fcd309a3db5cef.addTo(feature_group_156df4f3e80afa0e3ec757b2d930d18b);
         
     
-            feature_group_e36934e44da6829b8c8f41ccd6f9775c.addTo(map_434f78505b950e1ab14a2eab2e7686dd);
+            feature_group_156df4f3e80afa0e3ec757b2d930d18b.addTo(map_bc91feea532adad82e0f540646f519ad);
         
     
             L.control.fullscreen(
@@ -285,59 +263,59 @@ function onEachFeature(feature, layer) {
   "titleCancel": "Exit Full Screen",
   "forceSeparateButton": false,
 }
-            ).addTo(map_434f78505b950e1ab14a2eab2e7686dd);
+            ).addTo(map_bc91feea532adad82e0f540646f519ad);
         
     
-            var layer_control_790a6f79faa22191beea67f9add9a115_layers = {
+            var layer_control_e481d8cac6fd831a4afff73586409274_layers = {
                 base_layers : {
-                    "CartoDB Positron" : tile_layer_784a8aab8f29f95712865dc054988c6d,
-                    "OpenStreetMap" : tile_layer_5b2311879171b65eed3bcef07f5ab6c3,
+                    "CartoDB Positron" : tile_layer_df6672f81a6fa5aba5cc27f7d67593dd,
+                    "OpenStreetMap" : tile_layer_bc7b3686e2ea739204221e8875c40490,
                 },
                 overlays :  {
-                    "Buildings Toumpa (WMS)" : macro_element_d2f8257c10dd528a6edcf2d63dd1faec,
-                    "Area of Toumpa (WMS)" : macro_element_7f08e5b46817ed5831f79d6f1e566940,
-                    "Walking network (WMS)" : macro_element_eaa64f4ad2b60e1786a4c27f1fe9e67f,
-                    "Bus stops (WFS)" : feature_group_21bf239025b2243f415751e8c191d758,
-                    "Attributes (WFS)" : feature_group_e36934e44da6829b8c8f41ccd6f9775c,
+                    "Buildings Toumpa (WMS)" : macro_element_87163b303122116effb3f7e456259c72,
+                    "Area of Toumpa (WMS)" : macro_element_156f836f91efa70938bc268b76c84a65,
+                    "Walking network (WMS)" : macro_element_2333760a81ea39989f2b008f03cae180,
+                    "Bus stops (WFS)" : feature_group_124ad9e844858d14e2b95599f756e384,
+                    "Attributes (WFS)" : feature_group_156df4f3e80afa0e3ec757b2d930d18b,
                 },
             };
-            let layer_control_790a6f79faa22191beea67f9add9a115 = L.control.layers(
-                layer_control_790a6f79faa22191beea67f9add9a115_layers.base_layers,
-                layer_control_790a6f79faa22191beea67f9add9a115_layers.overlays,
+            let layer_control_e481d8cac6fd831a4afff73586409274 = L.control.layers(
+                layer_control_e481d8cac6fd831a4afff73586409274_layers.base_layers,
+                layer_control_e481d8cac6fd831a4afff73586409274_layers.overlays,
                 {
   "position": "topright",
   "collapsed": true,
   "autoZIndex": true,
 }
-            ).addTo(map_434f78505b950e1ab14a2eab2e7686dd);
+            ).addTo(map_bc91feea532adad82e0f540646f519ad);
 
         
     
-            tile_layer_784a8aab8f29f95712865dc054988c6d.addTo(map_434f78505b950e1ab14a2eab2e7686dd);
+            tile_layer_df6672f81a6fa5aba5cc27f7d67593dd.addTo(map_bc91feea532adad82e0f540646f519ad);
         
     
-            macro_element_d2f8257c10dd528a6edcf2d63dd1faec.addTo(map_434f78505b950e1ab14a2eab2e7686dd);
+            macro_element_87163b303122116effb3f7e456259c72.addTo(map_bc91feea532adad82e0f540646f519ad);
         
     
-            macro_element_7f08e5b46817ed5831f79d6f1e566940.addTo(map_434f78505b950e1ab14a2eab2e7686dd);
+            macro_element_156f836f91efa70938bc268b76c84a65.addTo(map_bc91feea532adad82e0f540646f519ad);
         
     
-            macro_element_eaa64f4ad2b60e1786a4c27f1fe9e67f.addTo(map_434f78505b950e1ab14a2eab2e7686dd);
+            macro_element_2333760a81ea39989f2b008f03cae180.addTo(map_bc91feea532adad82e0f540646f519ad);
         
     
-            marker_cluster_8726fe63f04b71a4e215da6c9fde42bb.addTo(feature_group_21bf239025b2243f415751e8c191d758);
+            marker_cluster_77d8c9828b1ec60449e428d0708a12fd.addTo(feature_group_124ad9e844858d14e2b95599f756e384);
         
     
-            realtime_76684bdcfc8cf8bfdf49a1655ebe77ee.addTo(feature_group_21bf239025b2243f415751e8c191d758);
+            realtime_b43ac2b089b1f383e6b6839e2ee4caf1.addTo(feature_group_124ad9e844858d14e2b95599f756e384);
         
     
-            feature_group_21bf239025b2243f415751e8c191d758.addTo(map_434f78505b950e1ab14a2eab2e7686dd);
+            feature_group_124ad9e844858d14e2b95599f756e384.addTo(map_bc91feea532adad82e0f540646f519ad);
         
     
-            realtime_924eb108c70e292e7c2ef80bbc214302.addTo(feature_group_e36934e44da6829b8c8f41ccd6f9775c);
+            realtime_9b937e8325c87ef4f7fcd309a3db5cef.addTo(feature_group_156df4f3e80afa0e3ec757b2d930d18b);
         
     
-            feature_group_e36934e44da6829b8c8f41ccd6f9775c.addTo(map_434f78505b950e1ab14a2eab2e7686dd);
+            feature_group_156df4f3e80afa0e3ec757b2d930d18b.addTo(map_bc91feea532adad82e0f540646f519ad);
         
 </script>
 </html>
