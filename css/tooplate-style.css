@@ -613,6 +613,10 @@ body {
   flex-grow: 1; /* This pushes the footer down */
 }
 
+.page-content {
+  flex: 1 0 auto;
+}
+
 .landing-page .main-content {
   flex: 1 1 auto;
   display: flex;
@@ -688,6 +692,22 @@ body {
   color: #555;
 }
 
-.landing-page .footer p {
+.footer p {
   margin-bottom: 0;
+}
+
+.bio-card {
+  max-width: 640px;
+  background-color: rgba(255, 255, 255, 0.92);
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (max-width: 580px) {
+  .contact-links {
+    flex-direction: column;
+  }
 }
