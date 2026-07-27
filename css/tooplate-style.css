@@ -13,7 +13,7 @@ body {
   padding-top: 70px;
   
   /* Corrected background image URL for GitHub Pages */
-  background-image: url('https://thanoskasamp.github.io/images/elevation.webp');
+  background-image: url('../images/elevation.webp');
   background-size: cover;  
   background-position: center; 
   background-repeat: no-repeat; 
@@ -76,7 +76,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
-  letter-spacing: -1px;
+  letter-spacing: 0;
 }
 
 h1 {
@@ -603,8 +603,79 @@ body {
   margin: 0; /* Remove body margin */
 }
 
+.landing-page {
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
 .main-content {
   flex-grow: 1; /* This pushes the footer down */
+}
+
+.landing-page .main-content {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  min-height: 0;
+}
+
+.landing-page .about.full-screen {
+  width: 100%;
+  min-height: 0;
+  padding: 1.5rem 0;
+}
+
+.landing-title {
+  color: #212121;
+  font-size: 2.8em;
+  margin: 24px 0 8px;
+}
+
+.landing-role {
+  color: #ffc200;
+  font-size: 2.2em;
+  margin-bottom: 1.25rem;
+}
+
+.landing-tech {
+  margin-bottom: 0;
+}
+
+.hero-spacer {
+  height: 3.5rem;
+}
+
+@media (max-width: 767px) {
+  .landing-page .about.full-screen {
+    padding: 1.25rem 0;
+  }
+
+  .round-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .landing-title {
+    font-size: 2rem;
+    margin: 18px 0 8px;
+  }
+
+  .landing-role {
+    font-size: 1.55rem;
+    margin-bottom: 1rem;
+  }
+
+  .landing-tech {
+    font-size: 1rem;
+    max-width: 20rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .hero-spacer {
+    height: 2rem;
+  }
 }
 
 
@@ -615,4 +686,8 @@ body {
   padding: 10px 0;
   font-size: 14px;
   color: #555;
+}
+
+.landing-page .footer p {
+  margin-bottom: 0;
 }

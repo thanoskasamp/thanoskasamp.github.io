@@ -3,7 +3,7 @@
      <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
+        <meta name="description" content="Portfolio of Athanasios Kasampalis, a geospatial software engineer working with Python, Django/FastAPI, JavaScript, React, PostGIS, and Docker.">
         <meta name="author" content="">
         <title>Athanasios Kasampalis - Portfolio</title>
 
@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="css/tooplate-style.css">
     </head>
 
-  <body>
+  <body class="landing-page">
   
         <!-- MENU -->
         <nav class="navbar navbar-expand-sm navbar-light">
@@ -48,26 +48,19 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-12 d-flex justify-content-center">
                         <div>
-                            <img src="images/undraw/me.webp" class="round-image" alt="svg image">
+                            <img src="images/undraw/me.webp" class="round-image" alt="Athanasios Kasampalis">
                         </div>
                     </div>
                     <div class="col-lg-12 col-md-12 col-12 d-flex justify-content-center">
                         <div class="about-text text-center">
-                            <h1 class="animated animated-text">
-                                <span class="mr-2">Athanasios Kasampalis</span>
-                                <br>
-                                <div class="animated-info">
-                                    <span class="animated-item">Geospatial Data Analyst</span>
-                                    <span class="animated-item">GIS Automation</span>
-                                    <span class="animated-item">Forest Specialist</span>
-                                </div>
-                            </h1>
-                            <p>Python | QGIS | PostgreSQL | PostGIS </p>
+                            <h1 class="landing-title">Athanasios Kasampalis</h1>
+                            <h2 class="landing-role">Geospatial Software Engineer</h2>
+                            <p class="landing-tech">Python | Django/FastAPI | JavaScript | React | PostGIS | Docker</p>
                         </div>
                     </div>
-                    <div class="col-xs-12" style="height: 250px;"></div>
+                    <div class="hero-spacer col-12"></div>
                     <div class="col-lg-12 col-md-12 col-12 d-flex justify-content-center">
-                        <a href="projects.html"><button type="button" class="btn btn-outline-secondary btn-lg">GIS Portfolio</button></a>
+                        <a href="projects.html" class="btn btn-outline-secondary btn-lg">Projects</a>
                     </div>
                 </div>
             </div>
@@ -76,7 +69,7 @@
 
         <!-- FOOTER -->
         <footer class="footer">
-            <p>Athanasios Kasampalis • © <span id="currentYear"></span></p>
+            <p>Athanasios Kasampalis &copy; <span id="currentYear"></span></p>
         </footer>
 
         <!-- JAVASCRIPT FILES -->
@@ -93,15 +86,6 @@
         <!-- FOOTER YEAR SCRIPT -->
         <script>
             document.getElementById('currentYear').textContent = new Date().getFullYear();
-        </script>
-
-        <!-- REFRESH PAGE SCRIPT-->
-        <script>
-            window.onload = function() {
-            setTimeout(function() {
-                window.scrollTo(0,0);
-            }, 10); // Adjust the timeout as necessary
-            }
         </script>
     </body>
 </html>
