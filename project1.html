@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Public transport accessibility analysis project by Athanasios Kasampalis, using Python, QGIS, PostGIS, GeoServer, NGINX, Docker, and interactive web maps.">
+    <meta name="author" content="Athanasios Kasampalis">
 
-    <title>Project 1 - Athanasios Kasampalis</title>
+    <title>Public Transport Accessibility Analysis - Athanasios Kasampalis</title>
 
     <!-- Same CSS links as your main site -->
     <link rel="stylesheet" href="css/styles.css">
@@ -34,7 +34,7 @@
               <a href="bio.html" class="nav-link"><span data-hover="Bio">Bio</span></a>
             </li>
             <li class="nav-item">
-              <a href="projects.html" class="nav-link"><span data-hover="Projects">Projects</span></a>
+              <a href="projects.html" class="nav-link" aria-current="page"><span data-hover="Projects">Projects</span></a>
             </li>
           </ul>
         </div>
@@ -42,34 +42,31 @@
     </nav>
 
     <!-- MAIN CONTAINER -->
-    <div class="container my-5">
+    <main class="container my-5 page-content">
       <!-- SHADOW BOX: wraps the entire project content in one white card-like area -->
-      <div class="shadow p-4 mx-auto" style="max-width: 900px; background-color: #fff; border-radius: 0.5rem;">
+      <div class="project-detail-card shadow p-4 mx-auto">
 
         <!-- PAGE TITLE -->
-        <h1 class="project-title mb-1">Puplic Transport Accessibility Analysis</h1>
-        <!-- Optional short descriptor -->
-        <!-- <p style="color: #6c757d;">An advanced DMA management application</p> -->
-        
+        <h1 class="project-title mb-1">Public Transport Accessibility Analysis</h1>
         <hr />
 
         <!-- LINKS & TECHNOLOGIES SECTION -->
         <div class="row mb-4">
           <div class="col-md-6 mb-3 mb-md-0">
             <h5 class="mb-2"><i class="uil uil-link"></i> Links</h5>
-            <ul style="list-style: none; padding-left: 0;">
+            <ul class="project-links-list">
               <li>
-                <a href="https://github.com/thanoskasamp/accessibility-project1" target="_blank">
+                <a href="https://github.com/thanoskasamp/accessibility-project1" target="_blank" rel="noopener noreferrer">
                   GitHub Repository
                 </a>
               </li>
               <li>
-                <a href="https://github.com/thanoskasamp/accessibility-project1/blob/main/analysis/accessibility_analysis.ipynb" target="_blank">
+                <a href="https://github.com/thanoskasamp/accessibility-project1/blob/main/analysis/accessibility_analysis.ipynb" target="_blank" rel="noopener noreferrer">
                   Python Analysis Notebook
                 </a>
               </li>
               <li>
-                <a href="https://github.com/thanoskasamp/accessibility-project1/blob/main/analysis/web_maps.ipynb" target="_blank">
+                <a href="https://github.com/thanoskasamp/accessibility-project1/blob/main/analysis/web_maps.ipynb" target="_blank" rel="noopener noreferrer">
                   Interactive Maps Notebook
                 </a> 
               </li>
@@ -81,7 +78,7 @@
             <span class="technology-box python">Python</span>
             <span class="technology-box qgis">QGIS</span>
             <span class="technology-box ajax">PostGIS</span>
-            <span class="technology-box css">Geoserver</span>
+            <span class="technology-box css">GeoServer</span>
             <span class="technology-box postgresql">Nginx</span>
             <span class="technology-box ajax">Docker</span>
           </div>
@@ -190,13 +187,13 @@
             <h4>Static Maps:</h4>
         </div>
         <div class="mb-4 text-center">
-          <img src="images/toumpa_accessibility.webp" alt="toumpa_accessibility" 
-               class="img-fluid rounded shadow-sm" style="max-width: 100%; height: auto;">
+          <img src="images/toumpa_accessibility.webp" alt="Public transport accessibility map for Toumpa" 
+               class="img-fluid rounded shadow-sm">
         </div>
 
         <div class="mb-4 text-center">
-            <img src="images/ano_poli_accessibility.webp" alt="toumpa_accessibility" 
-                 class="img-fluid rounded shadow-sm" style="max-width: 100%; height: auto;">
+            <img src="images/ano_poli_accessibility.webp" alt="Public transport accessibility map for Ano Poli" 
+                 class="img-fluid rounded shadow-sm">
         </div>
 
         <hr />
@@ -205,35 +202,31 @@
         <div class="mb-4">
             <h4>Interactive Maps:</h4>
         </div>
-        <div class="container my-5">
+        <div class="map-section my-5">
             <h4>Toumpa</h4>
-            <iframe src="files\toumpa_interactive.html"
-                    width="100%" 
-                    height="600px"
-                    frameborder="0"
-                    style="border:0;"
+            <iframe src="files/toumpa_interactive.html"
+                    title="Interactive public transport accessibility map for Toumpa"
+                    class="map-frame"
                     allowfullscreen>
             </iframe>
           </div>
 
-          <div class="container my-5">
-            <h4>Ano poli</h4>
-            <iframe src="files\anopoli_interactive.html"
-                    width="100%" 
-                    height="600px"
-                    frameborder="0"
-                    style="border:0;"
+          <div class="map-section my-5">
+            <h4>Ano Poli</h4>
+            <iframe src="files/anopoli_interactive.html"
+                    title="Interactive public transport accessibility map for Ano Poli"
+                    class="map-frame"
                     allowfullscreen>
             </iframe>
           </div>
 
           <hr />
       </div> <!-- END SHADOW BOX -->
-    </div> <!-- END MAIN CONTAINER -->
+    </main> <!-- END MAIN CONTAINER -->
 
     <!-- FOOTER -->
-    <footer class="footer">
-        <p>Athanasios Kasampalis • © <span id="currentYear"></span></p>
+    <footer class="footer text-center py-3">
+        <p>Athanasios Kasampalis &copy; <span id="currentYear"></span></p>
     </footer>
 
     <!-- JS SCRIPTS -->
@@ -250,15 +243,5 @@
       // Footer Year
       document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
-
-    <!-- REFRESH PAGE SCRIPT -->
-    <script>
-        window.onload = function() {
-          setTimeout(function() {
-            window.scrollTo(0,0);
-          }, 10); // Adjust the timeout as necessary
-        }
-      </script>
-
   </body>
 </html>

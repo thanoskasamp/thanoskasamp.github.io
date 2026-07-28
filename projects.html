@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Projects by Athanasios Kasampalis, focused on geospatial software, spatial analysis, and web mapping.">
+    <meta name="author" content="Athanasios Kasampalis">
 
-    <title>Athanasios Kasampalis - Portfolio</title>
+    <title>Projects - Athanasios Kasampalis</title>
 
     <!-- Same CSS links as your main site -->
     <link rel="stylesheet" href="css/styles.css">
@@ -35,7 +35,7 @@
               <a href="bio.html" class="nav-link"><span data-hover="Bio">Bio</span></a>
             </li>
             <li class="nav-item active">
-              <a href="projects.html" class="nav-link"><span data-hover="Projects">Projects</span></a>
+              <a href="projects.html" class="nav-link" aria-current="page"><span data-hover="Projects">Projects</span></a>
             </li>
           </ul>
         </div>
@@ -43,7 +43,7 @@
     </nav>
 
     <!-- MAIN CONTENT CONTAINER -->
-    <div class="container my-5">
+    <main class="container my-5 page-content">
 
       <!-- PAGE TITLE -->
       <div class="row">
@@ -56,25 +56,15 @@
       <div class="row mb-5">
         <div class="col-12">
           <!-- Card with a fixed min-height -->
-          <div class="shadow mx-auto p-4" style="max-width: 900px; min-height: 300px;">
+          <div class="project-card shadow mx-auto p-4">
             <div class="row h-100 align-items-start">
               
               <!-- IMAGE COLUMN -->
-              <div class="col-md-4 mb-3 mb-md-0" 
-                   style="position: relative; min-height: 250px; overflow: hidden;">
+              <div class="col-md-4 mb-3 mb-md-0">
                 <!-- The image is absolutely positioned to fill the column width -->
                 <img src="images/toumpa_accessibility.webp"
-                     alt="Project Image"
-                     style="position: absolute; top: 0; left: 0; width: 100%; height: auto; 
-                            max-height: 100%; object-fit: cover; object-position: top;"
-                     class="rounded">
-                
-                <!-- Fade-out overlay at the bottom -->
-                <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 80px;
-                            background: linear-gradient(to bottom, 
-                                                       rgba(255,255,255,0) 0%, 
-                                                       rgba(255,255,255,1) 100%);">
-                </div>
+                     alt="Public transport accessibility map preview for Toumpa"
+                     class="project-card-image rounded">
               </div>
               
               <!-- TEXT COLUMN -->
@@ -101,11 +91,11 @@
       
       <!-- ADD MORE PROJECT CARDS HERE (Project #2, #3, etc.) -->
 
-    </div> <!-- END container -->
+    </main> <!-- END container -->
 
     <!-- FOOTER -->
     <footer class="footer text-center py-3">
-      <p>Athanasios Kasampalis • © <span id="currentYear"></span></p>
+      <p>Athanasios Kasampalis &copy; <span id="currentYear"></span></p>
     </footer>
 
     <!-- JS SCRIPTS -->
