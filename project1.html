@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Public transport accessibility analysis project by Athanasios Kasampalis, using Python, QGIS, PostGIS, GeoServer, NGINX, Docker, and interactive web maps.">
+    <meta name="description" content="Public transport accessibility analysis project by Athanasios Kasampalis, using Python, OSMnx, network analysis, and QGIS static maps.">
     <meta name="author" content="Athanasios Kasampalis">
 
     <title>Public Transport Accessibility Analysis - Athanasios Kasampalis</title>
@@ -65,22 +65,14 @@
                   Python Analysis Notebook
                 </a>
               </li>
-              <li>
-                <a href="https://github.com/thanoskasamp/accessibility-project1/blob/main/analysis/web_maps.ipynb" target="_blank" rel="noopener noreferrer">
-                  Interactive Maps Notebook
-                </a> 
-              </li>
             </ul>
           </div>
           <div class="col-md-6">
             <h5 class="mb-2"><i class="uil uil-list-ui-alt"></i> Skills / Technologies</h5>
             <!-- Using your .technology-box classes for each tool/skill -->
             <span class="technology-box python">Python</span>
+            <span class="technology-box css">Network Analysis</span>
             <span class="technology-box qgis">QGIS</span>
-            <span class="technology-box ajax">PostGIS</span>
-            <span class="technology-box css">GeoServer</span>
-            <span class="technology-box postgresql">Nginx</span>
-            <span class="technology-box ajax">Docker</span>
           </div>
         </div>
 
@@ -123,42 +115,6 @@
             </li>
           </ol>
 
-          <!-- PART 2: WEBGIS -->
-          <h5>WebGIS</h5>
-
-          <!-- Frontend Section -->
-          <h6>Frontend</h6>
-          <ol>
-            <li>
-              <strong>Interactive Mapping with Folium:</strong> 
-              Created dynamic, interactive maps using the Folium Python library as the front-end mapping solution.
-            </li>
-          </ol>
-
-          <!-- Backend Section -->
-          <h6>Backend</h6>
-          <ol>
-            <li>
-              <strong>Docker:</strong> 
-              Containerized services to simplify deployment and manage multiple components seamlessly.
-            </li>
-            <li>
-              <strong>PostGIS:</strong> 
-              Utilized as a spatially enabled PostgreSQL database for robust geospatial data storage and querying.
-            </li>
-            <li>
-              <strong>GeoServer:</strong> 
-              Distributed geospatial data via OGC standards (WMS, WFS) to power the interactive maps.
-            </li>
-            <li>
-              <strong>NGINX Reverse Proxy:</strong> 
-              Configured to route requests to GeoServer securely.
-            </li>
-            <li>
-              <strong>Certbot SSL:</strong> 
-              Automated SSL certificate issuance and renewal to ensure secure HTTPS connections.
-            </li>
-          </ol>
         </div>
 
         
@@ -173,56 +129,36 @@
 
         <hr />
 
-        <!-- CONCLUSIONS / FUTURE DIRECTIONS (Optional) -->
-        <h4>Future Directions:</h4>
-        <ol>
-          <li>Enhance the front end with custom JavaScript for more dynamic, interactive features.</li>
-          <li>Launch a dedicated WebGIS application.</li>
-        </ol>
-        
-        <hr />
-
         <!-- STATIC MAPS-->
         <div class="mb-4">
-            <h4>Static Maps:</h4>
+            <h4>Accessibility Maps:</h4>
         </div>
         <div class="mb-4 text-center">
-          <img src="images/toumpa_accessibility.webp" alt="Public transport accessibility map for Toumpa" 
-               class="img-fluid rounded shadow-sm">
-        </div>
-
-        <div class="mb-4 text-center">
-            <img src="images/ano_poli_accessibility.webp" alt="Public transport accessibility map for Ano Poli" 
+          <button class="map-preview-button" type="button"
+                  data-fullscreen-src="images/toumpa_accessibility.webp"
+                  data-fullscreen-alt="Public transport accessibility map for Toumpa"
+                  aria-label="Open Toumpa accessibility map full screen">
+            <img src="images/toumpa_accessibility.webp" alt="Public transport accessibility map for Toumpa"
                  class="img-fluid rounded shadow-sm">
+          </button>
         </div>
 
-        <hr />
-
-        <!-- INTERACTIVE MAPS -->
-        <div class="mb-4">
-            <h4>Interactive Maps:</h4>
+        <div class="mb-4 text-center">
+            <button class="map-preview-button" type="button"
+                    data-fullscreen-src="images/ano_poli_accessibility.webp"
+                    data-fullscreen-alt="Public transport accessibility map for Ano Poli"
+                    aria-label="Open Ano Poli accessibility map full screen">
+              <img src="images/ano_poli_accessibility.webp" alt="Public transport accessibility map for Ano Poli"
+                   class="img-fluid rounded shadow-sm">
+            </button>
         </div>
-        <div class="map-section my-5">
-            <h4>Toumpa</h4>
-            <iframe src="files/toumpa_interactive.html"
-                    title="Interactive public transport accessibility map for Toumpa"
-                    class="map-frame"
-                    allowfullscreen>
-            </iframe>
-          </div>
-
-          <div class="map-section my-5">
-            <h4>Ano Poli</h4>
-            <iframe src="files/anopoli_interactive.html"
-                    title="Interactive public transport accessibility map for Ano Poli"
-                    class="map-frame"
-                    allowfullscreen>
-            </iframe>
-          </div>
-
-          <hr />
       </div> <!-- END SHADOW BOX -->
     </main> <!-- END MAIN CONTAINER -->
+
+    <div class="map-lightbox" id="mapLightbox" aria-hidden="true" role="dialog" aria-label="Map full screen preview">
+      <button class="map-lightbox-close" type="button" aria-label="Close map preview">&times;</button>
+      <img src="" alt="" class="map-lightbox-image">
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer text-center py-3">
@@ -242,6 +178,46 @@
     <script>
       // Footer Year
       document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+      (function() {
+        const lightbox = document.getElementById('mapLightbox');
+        const lightboxImage = lightbox.querySelector('.map-lightbox-image');
+        const closeButton = lightbox.querySelector('.map-lightbox-close');
+        const previewButtons = document.querySelectorAll('.map-preview-button');
+
+        function closeLightbox() {
+          lightbox.classList.remove('is-open');
+          lightbox.setAttribute('aria-hidden', 'true');
+          lightboxImage.src = '';
+          lightboxImage.alt = '';
+          document.body.classList.remove('lightbox-open');
+        }
+
+        previewButtons.forEach(function(button) {
+          button.addEventListener('click', function() {
+            lightboxImage.src = button.dataset.fullscreenSrc;
+            lightboxImage.alt = button.dataset.fullscreenAlt;
+            lightbox.classList.add('is-open');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('lightbox-open');
+            closeButton.focus();
+          });
+        });
+
+        closeButton.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', function(event) {
+          if (event.target === lightbox) {
+            closeLightbox();
+          }
+        });
+        document.addEventListener('keydown', function(event) {
+          if (event.key === 'Escape' && lightbox.classList.contains('is-open')) {
+            closeLightbox();
+          }
+        });
+      })();
     </script>
   </body>
 </html>

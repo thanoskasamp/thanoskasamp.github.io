@@ -604,7 +604,7 @@ body {
 }
 
 .landing-page {
-  height: 100vh;
+  height: 100dvh;
   min-height: 100vh;
   overflow: hidden;
 }
@@ -651,34 +651,41 @@ body {
 }
 
 @media (max-width: 767px) {
+  .landing-page {
+    height: auto;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
   .landing-page .about.full-screen {
-    padding: 1.25rem 0;
+    padding: 0.75rem 0 1rem;
   }
 
   .round-image {
-    width: 150px;
-    height: 150px;
+    width: 132px;
+    height: 132px;
   }
 
   .landing-title {
-    font-size: 2rem;
-    margin: 18px 0 8px;
+    font-size: 1.85rem;
+    margin: 16px 0 8px;
   }
 
   .landing-role {
-    font-size: 1.55rem;
-    margin-bottom: 1rem;
+    font-size: 1.35rem;
+    margin-bottom: 0.85rem;
   }
 
   .landing-tech {
-    font-size: 1rem;
-    max-width: 20rem;
+    font-size: 0.95rem;
+    max-width: 18rem;
     margin-right: auto;
     margin-left: auto;
   }
 
   .hero-spacer {
-    height: 2rem;
+    height: 1.25rem;
   }
 }
 
@@ -727,6 +734,58 @@ body {
   padding-left: 0;
 }
 
+.map-preview-button {
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.map-preview-button:focus {
+  outline: 3px solid #ffc200;
+  outline-offset: 4px;
+}
+
+.map-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(17, 17, 17, 0.9);
+}
+
+.map-lightbox.is-open {
+  display: flex;
+}
+
+.map-lightbox-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.map-lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.lightbox-open {
+  overflow: hidden;
+}
+
 .map-section {
   width: 100%;
 }
@@ -749,5 +808,9 @@ body {
 
   .map-frame {
     height: 420px;
+  }
+
+  .map-lightbox {
+    padding: 1rem;
   }
 }
