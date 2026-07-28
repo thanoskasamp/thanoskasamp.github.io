@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Thessaloniki Transport Accessibility WebGIS project by Athanasios Kasampalis, built with React, Leaflet, shadcn/ui, FastAPI, PostGIS, Docker, NGINX, and GDAL.">
+    <meta name="author" content="Athanasios Kasampalis">
+
+    <title>Thessaloniki Transport Accessibility WebGIS - Athanasios Kasampalis</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/unicons.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/tooplate-style.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">A. Kasampalis</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="bio.html" class="nav-link"><span data-hover="Bio">Bio</span></a>
+            </li>
+            <li class="nav-item">
+              <a href="projects.html" class="nav-link" aria-current="page"><span data-hover="Projects">Projects</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container my-5 page-content">
+      <div class="project-detail-card shadow p-4 mx-auto">
+        <h1 class="project-title mb-1">Thessaloniki Transport Accessibility WebGIS</h1>
+        <hr />
+
+        <div class="row mb-4">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <h5 class="mb-2"><i class="uil uil-link"></i> Links</h5>
+            <ul class="project-links-list">
+              <li>
+                <a href="https://skgtransport.app/" target="_blank" rel="noopener noreferrer">
+                  Open App
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5 class="mb-2"><i class="uil uil-list-ui-alt"></i> Skills / Technologies</h5>
+            <span class="technology-box react">React</span>
+            <span class="technology-box leaflet">Leaflet</span>
+            <span class="technology-box fastapi">FastAPI</span>
+            <span class="technology-box postgresql">PostGIS</span>
+            <span class="technology-box gdal">GDAL</span>
+            <span class="technology-box ajax">Docker</span>
+            <span class="technology-box css">NGINX</span>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="mb-4">
+          <h4>Project Summary:</h4>
+          <p>
+            Thessaloniki Transport Accessibility WebGIS is a full-stack application for exploring walking access to bus stops
+            and metro stations across the Municipality of Thessaloniki. It extends the original network analysis into an
+            interactive map interface.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="mb-4">
+          <h4>Application Architecture:</h4>
+          <ol>
+            <li><strong>Frontend:</strong> React, Leaflet, and shadcn/ui handle the interactive map interface and UI components.</li>
+            <li><strong>Backend:</strong> FastAPI exposes geospatial endpoints for the frontend.</li>
+            <li><strong>Database:</strong> PostgreSQL/PostGIS stores spatial datasets and precomputed accessibility outputs.</li>
+            <li><strong>Processing:</strong> OSMnx and GDAL prepare OpenStreetMap-derived data.</li>
+            <li><strong>Routing:</strong> pgRouting is used for shortest-path accessibility calculations.</li>
+            <li><strong>Deployment:</strong> Docker and NGINX run and route the application services.</li>
+          </ol>
+        </div>
+
+        <hr />
+
+        <div class="mb-4">
+          <h4>Limitations:</h4>
+          <ul class="limitations-list">
+            <li>Route distances depend on how buildings and stops connect to the available walking-network nodes. In some cases, a stop may be physically close to a building, but the calculated route is longer because the nearest usable network node is farther away.</li>
+            <li>The analysis compares selected Thessaloniki study areas separately. Buildings near an area boundary may have a closer stop in a neighboring area, but only stops within the same study area are considered for that area's results.</li>
+          </ul>
+        </div>
+
+        <hr />
+
+        <div class="mb-4">
+          <h4>Application Preview:</h4>
+        </div>
+        <div class="mb-4 text-center">
+          <img src="images/skgtransport.png"
+               alt="Screenshot of the Thessaloniki Transport Accessibility WebGIS app"
+               class="img-fluid rounded shadow-sm">
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer text-center py-3">
+      <p>Athanasios Kasampalis &copy; <span id="currentYear"></span></p>
+    </footer>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/Headroom.js"></script>
+    <script src="js/jQuery.headroom.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

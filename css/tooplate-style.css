@@ -752,6 +752,15 @@ body {
   padding-left: 0;
 }
 
+.limitations-list {
+  padding-left: 1.25rem;
+}
+
+.limitations-list li {
+  list-style: disc;
+  margin-bottom: 0.75rem;
+}
+
 .project-actions {
   display: flex;
   flex-wrap: wrap;
